@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -506,6 +506,33 @@ body {
 }
 .footer a { color: #4A90D9; text-decoration: none; }
 
+/* Table of Contents */
+.toc-bar {
+  background: #fff;
+  border-bottom: 1px solid #e8ecf0;
+  padding: 12px 40px;
+  position: sticky;
+  top: 65px;
+  z-index: 99;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.toc-bar a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.2s;
+  padding: 4px 0;
+}
+.toc-bar a:hover {
+  color: #4A90D9;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero h1 { font-size: 32px; }
@@ -515,6 +542,7 @@ body {
   .section { padding: 48px 20px; }
   .nav { padding: 16px 20px; }
   .nav-links { display: none; }
+  .toc-bar { padding: 10px 20px; gap: 16px; }
 }
 </style>
 </head>
@@ -522,7 +550,7 @@ body {
 
 <!-- Nav -->
 <nav class="nav">
-  <a href="https://getskipper.ai" class="nav-logo"><img src="../logo.png" alt="Skipper"><span>skipper</span></a>
+  <a href="https://getskipper.ai" class="nav-logo"><img src="/logo.png" alt="Skipper"><span>skipper</span></a>
   <div class="nav-links">
     <a href="https://getskipper.ai">Home</a>
     <a href="https://selfstack.beehiiv.com">Newsletter</a>
@@ -543,10 +571,23 @@ body {
   </div>
 </section>
 
+<!-- Table of Contents -->
+<nav class="toc-bar">
+  <a href="#how-it-works">How It Works</a>
+  <a href="#safe-zone">Safe Zones</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#research-prompt">Research Prompt</a>
+  <a href="#brand-cards">Brand Cards</a>
+  <a href="#headline-template">Format Template</a>
+  <a href="#agents">Scoring Agents</a>
+  <a href="#clone-any-ad">Clone Any Ad</a>
+  <a href="#animate">Animate</a>
+</nav>
+
 <div class="divider"></div>
 
 <!-- How It Works -->
-<section class="section">
+<section class="section" id="how-it-works">
   <div class="section-label">Overview</div>
   <h2>How This System Works</h2>
   <p>Five steps. One Claude Project. Unlimited ads that don't look like AI made them.</p>
@@ -598,7 +639,7 @@ body {
 <div class="divider"></div>
 
 <!-- Safe Zone Rule -->
-<section class="section">
+<section class="section" id="safe-zone">
   <div class="section-label">Important</div>
   <h2>The Safe Zone Rule</h2>
   <p>For 1080x1920 (9:16) images, keep all text and critical content out of the top 270px and bottom 340px. These areas get covered by Stories, Reels, and TikTok UI elements.</p>
@@ -608,7 +649,7 @@ body {
 <div class="divider"></div>
 
 <!-- Downloads -->
-<section class="section">
+<section class="section" id="downloads">
   <div class="section-label">Downloads</div>
   <h2>Grab the Templates</h2>
   <p>Copy-paste these into your Claude Project. Claude fills in the brackets using your brand research.</p>
@@ -890,53 +931,180 @@ image to an AI image generator.</pre>
 <div class="divider"></div>
 
 <!-- Clone Any Ad -->
-<section class="section">
+<section class="section" id="clone-any-ad">
   <div class="section-label">Step 5</div>
   <h2>Clone Any Ad</h2>
-  <p>See a competitor ad you love? Don't copy it. Clone the architecture and rebuild it for your brand.</p>
+  <p>See a competitor ad you love? Don't copy it. Clone the architecture and rebuild it for your brand. The ad-swipe system is a 3-stage reverse-engineering workflow: deconstruct, rebuild, generate.</p>
 
   <div class="steps">
     <div class="step">
       <div class="step-number">1</div>
       <div>
         <h3>Upload the competitor ad</h3>
-        <p>Drop it into your Claude Project. Any brand. Any format.</p>
+        <p>Drop it into your Claude Project. Any brand. Any format. Provide your brand name, product, persona, angle, and emotion.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-number">2</div>
       <div>
         <h3>Deconstruct</h3>
-        <p>Tell Claude: "Deconstruct this ad. What format is it? What's the layout? What copy structure is it using? Reverse-engineer it into a format template."</p>
+        <p>Claude analyzes layout, typography, color/mood, copy structure, and what makes the ad work. Every creative decision is extracted into structured JSON.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-number">3</div>
       <div>
         <h3>Rebuild for your brand</h3>
-        <p>Tell Claude: "Now rebuild this for [MY BRAND] using my brand spec card, targeting [PERSONA] with [ANGLE] angle and [EMOTION] emotion." Same structure. Your brand. Your output.</p>
+        <p>Claude keeps the structural techniques that work and rebuilds with YOUR brand's copy, colors, fonts, and imagery. The output is a complete Nano Banana prompt.</p>
       </div>
     </div>
   </div>
 
-  <h3 style="font-size: 20px; font-weight: 700; margin: 40px 0 16px; color: #1a1a2e;">The Full Ad-Swipe System</h3>
-  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">The ad-swipe .md file runs a 3-stage process. Upload it to your Claude Project and it handles everything automatically.</p>
+  <!-- Stage 1: Deconstruct -->
+  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 1: Deconstruct the Competitor Ad</h3>
+  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">When a competitor ad image is uploaded, Claude extracts four layers of analysis.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">📐</div>
+      <h3>Layout Analysis</h3>
+      <p>Aspect ratio, format type (headline, before-after, testimonial, etc.), style match, composition (text position, product position, negative space, visual hierarchy).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔤</div>
+      <h3>Typography Extraction</h3>
+      <p>Headline treatment (case, font category, weight, alignment, spacing, color), subhead treatment, body treatment, and CTA treatment (shape, fill, text case).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <h3>Color &amp; Mood</h3>
+      <p>Background type, dominant/secondary colors, full palette, lighting style, mood adjectives, and energy level (quiet to urgent).</p>
+    </div>
+  </div>
+
+  <div class="code-block" style="margin-top: 24px;">
+    <span class="code-label">Layout Analysis JSON (extracted by Claude)</span>
+    <pre>{
+  "aspect_ratio": "",
+  "format_type": "headline | before-after | testimonial | social-proof | us-vs-them | statistics | features-benefits | bullet-points | press | news | ugc | founder-story | carousel | handwriting | negative-marketing | other",
+  "style_match": "Which style (A/B/C/D) from the matched format spec",
+  "composition": {
+    "text_position": "top-third | center | bottom-third | left-aligned | right-aligned | overlaid",
+    "product_position": "center | left | right | top | bottom | absent | background",
+    "product_frame_percentage": "estimated % of frame",
+    "negative_space": "minimal | moderate | generous",
+    "visual_hierarchy": "What the eye reads first, second, third"
+  }
+}</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Copy Extraction JSON (extracted by Claude)</span>
+    <pre>{
+  "text_elements": [
+    {
+      "role": "headline | subhead | body | label | cta | proof | offer | badge",
+      "text": "exact text as rendered",
+      "word_count": "",
+      "position_in_frame": ""
+    }
+  ],
+  "total_text_elements": "",
+  "copy_strategy": "What is the ad actually arguing? What is the single message?",
+  "emotional_register": "What emotion is it trying to trigger?",
+  "proof_mechanism": "How does it prove its claim?"
+}</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">What Makes This Ad Work (extracted by Claude)</span>
+    <pre>{
+  "strongest_element": "The single best creative decision in this ad",
+  "weakest_element": "The single worst creative decision",
+  "visual_copy_coherence": "Does the image reinforce the copy? Yes/No and why",
+  "scroll_stop_factor": "What would make someone stop scrolling? Rate 1-10",
+  "steal_worthy": ["List 1-3 specific techniques worth borrowing"]
+}</pre>
+  </div>
+
+  <!-- Stage 2: Rebuild -->
+  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 2: Rebuild for Your Brand</h3>
+  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">Using the deconstruction, Claude generates a complete ad prompt that keeps the structural techniques that work, replaces all copy with YOUR brand's voice, applies YOUR visual system from the spec sheet, and maintains YOUR format spec text limits.</p>
+
+  <div class="code-block">
+    <span class="code-label">Rebuild Template Prompt (generated by Claude)</span>
+    <pre>You are generating a social media ad creative. The output must be a
+finished, publication-ready image at [ASPECT RATIO] with all copy
+rendered directly in the image using the brand's fonts from the
+uploaded spec sheet.
+
+CREATIVE ORIGIN:
+This ad is inspired by a competitor's creative approach. We are
+borrowing the STRUCTURE and COMPOSITION techniques, not the copy,
+colors, or brand identity. The structural techniques being borrowed
+are: [LIST STEAL-WORTHY TECHNIQUES FROM DECONSTRUCTION].
+
+BRAND CONTEXT:
+This is [BRAND NAME]. Reference the uploaded brand spec sheet for
+all visual identity decisions.
+- Fonts: [FROM SPEC SHEET]
+- Colors: [FROM SPEC SHEET]
+- Voice: [FROM BRAND BRIEF]
+
+PERSONA: [PERSONA NAME AND DESCRIPTION]
+ANGLE: [ANGLE]
+EMOTION: [EMOTION]
+PRODUCT: [PRODUCT NAME AND KEY DETAILS]
+
+COMPOSITION:
+One continuous image filling the entire frame at [ASPECT RATIO].
+- Product position: [MATCH COMPETITOR'S PRODUCT POSITION]
+- Text position: [MATCH COMPETITOR'S TEXT POSITION]
+- Visual hierarchy: [MATCH COMPETITOR'S READING ORDER]
+- Negative space: [MATCH COMPETITOR'S SPACING APPROACH]
+
+COPY ELEMENTS:
+This ad has exactly [N] text elements. No more.
+1. [ROLE]: "[YOUR COPY]"
+   - Font: [FROM SPEC SHEET]
+   - Color: [FROM SPEC SHEET]
+   - Treatment: [MATCH COMPETITOR'S TREATMENT]
+
+SAFE ZONES:
+Top 270px and bottom 340px clear. Left margin 40px. Right margin
+120px from y=600 downward.
+
+RULES:
+1. Exactly [N] text elements. No more.
+2. Reference the uploaded brand spec sheet for ALL visual identity.
+3. Product must be accurately represented per uploaded product image.
+4. All critical content within the primary content zone.
+5. No text smaller than 24px at 1080px width.
+6. One continuous image. No panels, borders, or grid lines.
+7. No em dashes anywhere in rendered copy.
+8. Every data point appears exactly once.
+9. This must look like YOUR brand's ad, not a copy of the competitor's.</pre>
+  </div>
+
+  <!-- Stage 3: Copy Generation -->
+  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 3: Copy Generation</h3>
+  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">Before inserting copy into the prompt, Claude generates it using the matched format spec and runs it through quality checks.</p>
 
   <div class="cards-grid">
     <div class="card">
       <div class="card-icon">1</div>
-      <h3>Stage 1: Deconstruct</h3>
-      <p>Claude extracts layout analysis (format type, composition, visual hierarchy), typography (font category, weight, spacing, case), color and mood (palette, lighting, energy level), copy structure (every text element, word counts, copy strategy), and what makes it work (strongest element, scroll-stop factor, steal-worthy techniques).</p>
+      <h3>Load Format Spec</h3>
+      <p>Load the matched format spec (.md file) and use the copy template from the matched style. Write copy that fits the persona, angle, and emotion.</p>
     </div>
     <div class="card">
       <div class="card-icon">2</div>
-      <h3>Stage 2: Rebuild</h3>
-      <p>Keeps the structural techniques that work (layout, composition, hierarchy). Replaces all copy with YOUR brand's copy matched to your persona, angle, and emotion. Applies YOUR visual system (fonts, colors, imagery) from your spec sheet. Maintains YOUR text element limits from the matched format spec.</p>
+      <h3>Verify Word Counts</h3>
+      <p>Check every element against word count limits from the template. Every headline, subhead, and CTA must fall within the specified range.</p>
     </div>
     <div class="card">
       <div class="card-icon">3</div>
-      <h3>Stage 3: Copy Generation</h3>
-      <p>Generates copy using the matched format spec's word counts. Runs Agent 7 (grammar, punctuation, banned characters) before output. Maps every text element to the correct slot. Outputs a complete Nano Banana prompt ready to paste into fal.ai.</p>
+      <h3>Run Agent 7 Checklist</h3>
+      <p>Grammar check, spelling check, punctuation check, banned characters (no em dashes, no semicolons in headlines), number consistency, duplicate content check, word count compliance.</p>
     </div>
   </div>
 
@@ -944,12 +1112,19 @@ image to an AI image generator.</pre>
     <div class="callout-icon">&#9888;&#65039;</div>
     <p><strong>Rules:</strong> Never copy a competitor's actual copy or brand language. We borrow structure, not content. The output must pass YOUR brand's format spec constraints. The final ad must look like it was conceived for your brand from scratch.</p>
   </div>
+
+  <div class="download-card" style="margin-top: 32px; max-width: 480px;">
+    <div class="icon">📄</div>
+    <h3>ad-swipe.md</h3>
+    <p>The complete Ad-Swipe reverse-engineering system. All 3 stages, all JSON templates, the full rebuild prompt. Ready to upload to your Claude Project.</p>
+    <a href="/ad-swipe.md" class="download-btn" download>Download ad-swipe.md</a>
+  </div>
 </section>
 
 <div class="divider"></div>
 
 <!-- Animate -->
-<section class="section">
+<section class="section" id="animate">
   <div class="section-label">Bonus</div>
   <h2>Animate Your Statics</h2>
   <p>Turn a winning static ad into a 3-4 second animation in 15 minutes. The key insight: you're not asking AI to "animate your ad." You create a start frame and an end frame, then let AI interpolate between them.</p>
