@@ -30,13 +30,17 @@ body {
   z-index: 100;
 }
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-weight: 800;
   font-size: 20px;
   color: #1a1a2e;
   text-decoration: none;
   letter-spacing: -0.5px;
 }
-.nav-logo span { color: #4A90D9; }
+.nav-logo img { height: 32px; width: auto; }
+.nav-logo span { color: #1a1a2e; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
 .nav-links a {
   color: #64748b;
@@ -518,7 +522,7 @@ body {
 
 <!-- Nav -->
 <nav class="nav">
-  <a href="https://getskipper.ai" class="nav-logo"><span>skipper</span></a>
+  <a href="https://getskipper.ai" class="nav-logo"><img src="/logo.png" alt="Skipper"><span>skipper</span></a>
   <div class="nav-links">
     <a href="https://getskipper.ai">Home</a>
     <a href="https://selfstack.beehiiv.com">Newsletter</a>
