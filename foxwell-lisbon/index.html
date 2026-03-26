@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foxwell Founders Lisbon | Skipper</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #1a1a2e;
+  background: #f8fafc;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 40px;
+  background: #fff;
+  border-bottom: 1px solid #e8ecf0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-weight: 800;
+  font-size: 20px;
+  color: #1a1a2e;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.nav-logo span { color: #4A90D9; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+.nav-links a:hover { color: #1a1a2e; }
+.nav-cta {
+  background: #1a1a2e;
+  color: #fff !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.nav-cta:hover { background: #2d2d4e; }
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 40px 60px;
+  background: linear-gradient(180deg, #f0f4ff 0%, #f8fafc 100%);
+}
+.hero-badge {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #4A90D9;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.15;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  letter-spacing: -1.5px;
+  color: #1a1a2e;
+}
+.hero p {
+  font-size: 18px;
+  color: #64748b;
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* Newsletter CTA */
+.newsletter-cta {
+  background: #1a1a2e;
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 640px;
+  margin: 0 auto 0;
+  text-align: center;
+}
+.newsletter-cta h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.newsletter-cta p {
+  color: #94a3b8;
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+.newsletter-btn {
+  display: inline-block;
+  background: #4A90D9;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+.newsletter-btn:hover { background: #3a7bc8; }
+
+/* Section */
+.section {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.section-label {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #4A90D9;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  color: #1a1a2e;
+}
+.section > p {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 640px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.step {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  padding: 32px;
+}
+.step-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: #4A90D9;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+.step h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+.step p {
+  font-size: 15px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.card {
+  background: #fff;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  padding: 32px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.card-icon {
+  width: 48px;
+  height: 48px;
+  background: #e8f0fe;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+.card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Download section */
+.downloads {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+.download-card {
+  background: #fff;
+  border: 2px solid #e8ecf0;
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.download-card:hover {
+  border-color: #4A90D9;
+  box-shadow: 0 8px 24px rgba(74,144,217,0.12);
+}
+.download-card .icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.download-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+.download-card p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.download-btn {
+  display: inline-block;
+  background: #1a1a2e;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.download-btn:hover { background: #2d2d4e; }
+
+/* Agent table */
+.agent-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 32px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e8ecf0;
+}
+.agent-table th {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 14px 20px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.agent-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 14px;
+  color: #475569;
+}
+.agent-table tr:last-child td { border-bottom: none; }
+.agent-table tr:hover td { background: #f8fafc; }
+.agent-num {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  background: #4A90D9;
+  color: #fff;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+.agent-name { font-weight: 700; color: #1a1a2e; }
+
+/* Code block */
+.code-block {
+  background: #1a1a2e;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 24px 0;
+  overflow-x: auto;
+}
+.code-block pre {
+  color: #e2e8f0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.code-label {
+  color: #4A90D9;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* Callout */
+.callout {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 32px 0;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.callout-icon { font-size: 24px; flex-shrink: 0; }
+.callout p {
+  font-size: 14px;
+  color: #92400e;
+  line-height: 1.6;
+}
+.callout strong { color: #78350f; }
+
+/* Save reminder */
+.save-reminder {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 32px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.save-reminder .icon { font-size: 28px; }
+.save-reminder p {
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.save-reminder strong { color: #fff; }
+.save-reminder code {
+  background: rgba(255,255,255,0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #93c5fd;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: #e8ecf0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Animation section */
+.anim-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+.anim-step {
+  background: #fff;
+  border: 1px solid #e8ecf0;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+.anim-step .num {
+  width: 36px;
+  height: 36px;
+  background: #4A90D9;
+  color: #fff;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.anim-step h4 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a2e;
+}
+.anim-step p {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Footer CTA */
+.footer-cta {
+  background: linear-gradient(135deg, #1a1a2e 0%, #0f172a 100%);
+  padding: 80px 40px;
+  text-align: center;
+}
+.footer-cta h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+.footer-cta p {
+  color: #94a3b8;
+  font-size: 16px;
+  max-width: 480px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.footer-cta .btn-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.btn-primary {
+  display: inline-block;
+  background: #4A90D9;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+}
+.btn-secondary {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Footer */
+.footer {
+  padding: 32px 40px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+  background: #0f172a;
+}
+.footer a { color: #4A90D9; text-decoration: none; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .downloads { grid-template-columns: 1fr; }
+  .anim-steps { grid-template-columns: 1fr; }
+  .section { padding: 48px 20px; }
+  .nav { padding: 16px 20px; }
+  .nav-links { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="https://getskipper.ai" class="nav-logo"><span>skipper</span></a>
+  <div class="nav-links">
+    <a href="https://getskipper.ai">Home</a>
+    <a href="https://selfstack.beehiiv.com">Newsletter</a>
+    <a href="https://www.selfgen.co/sub-home" class="nav-cta">Subscribe to SelfStack</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">FOXWELL FOUNDERS LISBON</div>
+  <h1>Everything from today's session. Copy-paste ready.</h1>
+  <p>All prompts, templates, and workflows from the Foxwell Founders Lisbon session. Copy-paste ready. Built to work with Claude Projects or Claude Code.</p>
+
+  <div class="newsletter-cta">
+    <h3>Get the weekly workflow</h3>
+    <p>Every Friday: new prompts, format templates, and production techniques. Join 5,000+ creative strategists.</p>
+    <a href="https://www.selfgen.co/sub-home" class="newsletter-btn">Join the Newsletter</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- How It Works -->
+<section class="section">
+  <div class="section-label">Overview</div>
+  <h2>How This System Works</h2>
+  <p>Five steps. One Claude Project. Unlimited ads that don't look like AI made them.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        <h3>Run the Research Prompt</h3>
+        <p>Once per brand. Paste into a Claude Project with web search enabled. Claude builds a comprehensive brand intelligence brief covering identity, products, proof points, competitors, and founder story.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        <h3>Generate Brand Reference Cards</h3>
+        <p>Claude produces two HTML pages (Brand Spec Card + Visual Style Card). Screenshot each as a PNG. These become your visual reference for every ad you generate.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <h3>Save Format Templates + Scoring Agents</h3>
+        <p>Upload format templates and scoring agents to your Claude Project as Project Knowledge. These are the recipe cards Claude uses to write copy and build image prompts.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div>
+        <h3>Brief Any Ad</h3>
+        <p>Paste a brief request into your Project. Claude writes the copy, scores it with your agents, iterates until every agent passes 90+, and generates a structured image prompt.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">5</div>
+      <div>
+        <h3>Generate in fal.ai</h3>
+        <p>Copy the prompt + brand spec card PNGs + product photo into Nano Banana 2 (fal.ai). Hit generate. The output looks like your brand, not like AI.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">💡</div>
+    <p><strong>Claude Chat users:</strong> upload files to Project Knowledge. <strong>Claude Code users:</strong> save .md files to your project folder. Either way, one workspace, all your assets, every session starts smart.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Safe Zone Rule -->
+<section class="section">
+  <div class="section-label">Important</div>
+  <h2>The Safe Zone Rule</h2>
+  <p>For 1080x1920 (9:16) images, keep all text and critical content out of the top 270px and bottom 340px. These areas get covered by Stories, Reels, and TikTok UI elements.</p>
+  <p>The image itself should be one continuous photograph extending to all edges. No panels. No borders. No boxes. Every format template already includes this.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- Downloads -->
+<section class="section">
+  <div class="section-label">Downloads</div>
+  <h2>Grab the Templates</h2>
+  <p>Copy-paste these into your Claude Project. Claude fills in the brackets using your brand research.</p>
+
+  <div class="downloads">
+    <div class="download-card">
+      <div class="icon">📋</div>
+      <h3>Research Prompt</h3>
+      <p>Run once per brand. Generates the complete brand intelligence brief that powers everything else.</p>
+      <a href="#research-prompt" class="download-btn">Copy Prompt</a>
+    </div>
+    <div class="download-card">
+      <div class="icon">🎨</div>
+      <h3>Brand Spec Card Prompt</h3>
+      <p>Generates the HTML page you screenshot as your brand reference image for AI generation.</p>
+      <a href="#brand-cards" class="download-btn">Copy Prompt</a>
+    </div>
+    <div class="download-card">
+      <div class="icon">📐</div>
+      <h3>Headline Format Template</h3>
+      <p>The first of 15 format "recipe cards." Tells Claude exactly what copy to write and what to tell the image generator.</p>
+      <a href="#headline-template" class="download-btn">Download .md</a>
+    </div>
+    <div class="download-card">
+      <div class="icon">🔄</div>
+      <h3>Ad-Swipe System</h3>
+      <p>Upload a competitor ad. Claude deconstructs it, rebuilds it for your brand. Complete 3-stage reverse-engineering system.</p>
+      <a href="/ad-swipe.md" class="download-btn" download>Download .md</a>
+    </div>
+    <div class="download-card">
+      <div class="icon">🤖</div>
+      <h3>Scoring Agent Prompt</h3>
+      <p>Build your own scoring agents. 7 agents review every brief. Nothing ships below 90.</p>
+      <a href="#agents" class="download-btn">Copy Prompt</a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Research Prompt -->
+<section class="section" id="research-prompt">
+  <div class="section-label">Step 1</div>
+  <h2>The Research Prompt</h2>
+  <p>Run this once per brand. Paste into a Claude Project with web search enabled. Save the output as your brand research brief.</p>
+
+  <div class="code-block">
+    <span class="code-label">Copy and paste into Claude</span>
+    <pre>INPUT VARIABLES:
+Target Brand Name: [INSERT BRAND NAME HERE]
+Target URL: [INSERT URL HERE]
+Hero Product (if known): [INSERT PRODUCT NAME OR "FLAGSHIP"]
+
+Role: Act as a Senior Performance Creative Strategist at a DTC ad agency.
+You specialize in building static ad creative across 15 proven ad formats.
+Your job is to extract every piece of usable information from a brand's
+public presence so a designer can produce ads without needing to ask a
+single follow-up question.
+
+Objective: Build a comprehensive "Ad Creative Research Brief" for the
+Target Brand, covering brand identity, product details, proof points,
+competitive positioning, and founder narrative.
+
+This brief will fuel the generation of static ads across these 15 formats:
+Before &amp; After, Bullet Points, Carousel, Features &amp; Benefits, Founder
+Story, Handwriting, Negative Marketing, New Creative Formats, News, Press,
+Social Proof, Statistics, Testimonial, UGC, Us vs Them.
+
+PHASE 1: BRAND IDENTITY &amp; VISUAL SYSTEM
+PHASE 2: PRODUCT INTELLIGENCE
+PHASE 3: PROOF POINTS &amp; SOCIAL PROOF
+PHASE 4: TRANSFORMATION &amp; PAIN POINTS
+PHASE 5: COMPETITIVE POSITIONING
+PHASE 6: FOUNDER &amp; ORIGIN STORY
+PHASE 7: AD-READY HOOKS &amp; ANGLES
+
+[Full prompt available in the companion doc download]</pre>
+  </div>
+
+  <div class="save-reminder">
+    <div class="icon">💾</div>
+    <p><strong>Save it.</strong> Tell Claude: <code>Output this as a file called brand-research-brief.json</code>. Download the file. Upload to Project Knowledge.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Brand Cards -->
+<section class="section" id="brand-cards">
+  <div class="section-label">Step 2</div>
+  <h2>Brand Reference Cards</h2>
+  <p>Run these in the same Claude Project after the research prompt. Claude generates HTML pages you screenshot as PNGs. These replace "reference images" with actual rules the AI can read.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>Brand Spec Card</h3>
+      <p>Logo, typography system, color palette with hex codes, design rules (always/never), and CTA button style. Everything a designer needs, rendered visually.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📸</div>
+      <h3>Visual Style Card</h3>
+      <p>Brand essence, photography direction, always/never rules for imagery, product styling notes, and mood spectrum. Controls how your brand looks in every generation.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⬇️</div>
+      <h3>Screenshot as PNG</h3>
+      <p>Open each HTML in your browser. Screenshot. Save. These two PNGs + a product hero photo get uploaded with every format prompt into fal.ai.</p>
+    </div>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Brand Spec Card Prompt</span>
+    <pre>Using the Brand Research Brief you just created, generate a clean HTML
+page I can screenshot as a Brand Spec Card for AI image generation.
+
+The card should include:
+
+1. Logo &amp; Wordmark - show the brand name in the exact fonts and colors
+   from the brief, with black and white versions and usage notes
+2. Typography System - sample text rendered in each font role (headlines,
+   body, accents/labels) with font names labeled
+3. Color Palette - visual swatches of all brand colors with hex codes
+   and names (primary, secondary, accent, background)
+4. Design Rules - 4-5 "always do" and 4-5 "never do" rules specific
+   to this brand
+5. CTA Button Style - render the actual CTA button style (color, shape,
+   text treatment) based on what you found on their site
+
+Make it clean, well-organized, and visually clear. This card will be
+uploaded as a reference image to an AI image generator, so every detail
+needs to be visually explicit, not just described in text.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Visual Style Card Prompt</span>
+    <pre>Using the Brand Research Brief, generate a second HTML page I can
+screenshot as a Visual Style Card. This card should include:
+
+1. Brand Essence - 3 adjectives that define the brand voice, with
+   short descriptions
+2. Founder Quote - one defining quote that captures the brand's
+   philosophy
+3. Photography Direction - separate visual blocks for: product
+   photography, skin/model photography, lifestyle/context shots, and
+   background/surface preferences. Each with keyword tags
+4. Always/Never Rules - specific to how this brand portrays people,
+   skin, products, and environments
+5. Product Styling Notes - how the hero product should be photographed
+6. Mood Spectrum - where the brand sits on scales like loud vs quiet,
+   youthful vs timeless, clinical vs warm
+
+Same as before: clean, visual, designed to be uploaded as a reference
+image to an AI image generator.</pre>
+  </div>
+
+  <div class="save-reminder">
+    <div class="icon">💾</div>
+    <p><strong>Save both cards.</strong> Screenshot each HTML as a PNG. These get uploaded to fal.ai with every generation. Also tell Claude: <code>Output this as brand-spec-card.md</code> and upload to Project Knowledge.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Headline Template -->
+<section class="section" id="headline-template">
+  <div class="section-label">Step 3</div>
+  <h2>The Format Template</h2>
+  <p>This is one of 15 format templates. Each one is a "recipe card" that tells Claude exactly what copy to write and exactly what to tell the image generator. Download it, upload to your Project, and Claude fills in the brackets using your brand research.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">📝</div>
+      <h3>What this format IS</h3>
+      <p>One sentence definition. What it does, how it works, why it exists as a distinct format.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✍️</div>
+      <h3>What copy goes where</h3>
+      <p>Headline: 3-12 words. Subhead: optional, 5-15 words. CTA: optional, 2-5 words. Word counts enforced.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📐</div>
+      <h3>What the image should look like</h3>
+      <p>Composition, lighting, product position, background, safe zones. Everything the image generator needs.</p>
+    </div>
+  </div>
+
+  <div class="download-card" style="margin-top: 32px; max-width: 480px;">
+    <div class="icon">📄</div>
+    <h3>headline.md</h3>
+    <p>The Headline Format Template. 3 styles, variation vectors, visual-headline coherence rules, and the copy editor agent spec. Ready to paste into Claude.</p>
+    <a href="#" class="download-btn">Download headline.md</a>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">🔨</div>
+    <p><strong>Build your own:</strong> Collect 5-10 screenshots of ads in the style you want. Upload to Claude. Say: "Analyze these ads. What do they all have in common? Write me a format template with copy slots, word counts, image direction, and rules." Refine. Save.</p>
+  </div>
+
+  <div class="save-reminder">
+    <div class="icon">💾</div>
+    <p><strong>Save it.</strong> Tell Claude: <code>Output this as a file called headline.md</code>. Download. Upload to Project Knowledge. One file per format. Build 15 and you never write a prompt from scratch.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Scoring Agents -->
+<section class="section" id="agents">
+  <div class="section-label">Step 4</div>
+  <h2>The Scoring Agents</h2>
+  <p>Every brief passes through 7 agents before it reaches image generation. Each one scores 1-100. The brief iterates until all agents score 90+. Any grammar error from Agent 7 is an instant fail.</p>
+
+  <table class="agent-table">
+    <thead>
+      <tr>
+        <th style="width: 60px;">#</th>
+        <th style="width: 180px;">Agent</th>
+        <th>What It Checks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="agent-num">1</span></td>
+        <td class="agent-name">Persona Fit</td>
+        <td>Does the copy resonate with the target persona?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">2</span></td>
+        <td class="agent-name">Angle Execution</td>
+        <td>Is the strategic angle consistent across all elements?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">3</span></td>
+        <td class="agent-name">Emotion</td>
+        <td>Does the copy produce the target emotion, not just name it?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">4</span></td>
+        <td class="agent-name">Brand Consistency</td>
+        <td>Does everything match the brand's voice and visual system?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">5</span></td>
+        <td class="agent-name">Copy Excellence</td>
+        <td>Would a world-class copywriter be proud of this headline?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">6</span></td>
+        <td class="agent-name">Format Compliance</td>
+        <td>Does the copy fit the structural requirements of the chosen format?</td>
+      </tr>
+      <tr>
+        <td><span class="agent-num">7</span></td>
+        <td class="agent-name">Copy Editor</td>
+        <td>Grammar, spelling, punctuation, banned characters. Pass/fail. Veto power.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="code-block">
+    <span class="code-label">Build your own agent</span>
+    <pre>Create a scoring agent that checks [DIMENSION]. It should:
+
+- Score the brief 1-100
+- List specific strengths (with quotes from the copy)
+- List specific weaknesses (with quotes from the copy)
+- Give concrete fixes to reach 90+
+- Output as a markdown file</pre>
+  </div>
+
+  <div class="save-reminder">
+    <div class="icon">💾</div>
+    <p><strong>Save each agent.</strong> Tell Claude: <code>Output each agent as its own .md file</code>. agent-persona.md, agent-brand.md, agent-grammar.md. Upload all to Project Knowledge.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Clone Any Ad -->
+<section class="section">
+  <div class="section-label">Step 5</div>
+  <h2>Clone Any Ad</h2>
+  <p>See a competitor ad you love? Don't copy it. Clone the architecture and rebuild it for your brand.</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-number">1</div>
+      <div>
+        <h3>Upload the competitor ad</h3>
+        <p>Drop it into your Claude Project. Any brand. Any format.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div>
+        <h3>Deconstruct</h3>
+        <p>Tell Claude: "Deconstruct this ad. What format is it? What's the layout? What copy structure is it using? Reverse-engineer it into a format template."</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div>
+        <h3>Rebuild for your brand</h3>
+        <p>Tell Claude: "Now rebuild this for [MY BRAND] using my brand spec card, targeting [PERSONA] with [ANGLE] angle and [EMOTION] emotion." Same structure. Your brand. Your output.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size: 20px; font-weight: 700; margin: 40px 0 16px; color: #1a1a2e;">The Full Ad-Swipe System</h3>
+  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">The ad-swipe .md file runs a 3-stage process. Upload it to your Claude Project and it handles everything automatically.</p>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-icon">1</div>
+      <h3>Stage 1: Deconstruct</h3>
+      <p>Claude extracts layout analysis (format type, composition, visual hierarchy), typography (font category, weight, spacing, case), color and mood (palette, lighting, energy level), copy structure (every text element, word counts, copy strategy), and what makes it work (strongest element, scroll-stop factor, steal-worthy techniques).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">2</div>
+      <h3>Stage 2: Rebuild</h3>
+      <p>Keeps the structural techniques that work (layout, composition, hierarchy). Replaces all copy with YOUR brand's copy matched to your persona, angle, and emotion. Applies YOUR visual system (fonts, colors, imagery) from your spec sheet. Maintains YOUR text element limits from the matched format spec.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">3</div>
+      <h3>Stage 3: Copy Generation</h3>
+      <p>Generates copy using the matched format spec's word counts. Runs Agent 7 (grammar, punctuation, banned characters) before output. Maps every text element to the correct slot. Outputs a complete Nano Banana prompt ready to paste into fal.ai.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 24px;">
+    <div class="callout-icon">&#9888;&#65039;</div>
+    <p><strong>Rules:</strong> Never copy a competitor's actual copy or brand language. We borrow structure, not content. The output must pass YOUR brand's format spec constraints. The final ad must look like it was conceived for your brand from scratch.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Animate -->
+<section class="section">
+  <div class="section-label">Bonus</div>
+  <h2>Animate Your Statics</h2>
+  <p>Turn a winning static ad into a 3-4 second animation in 15 minutes. The key insight: you're not asking AI to "animate your ad." You create a start frame and an end frame, then let AI interpolate between them.</p>
+
+  <div class="anim-steps">
+    <div class="anim-step">
+      <div class="num">1</div>
+      <h4>Ideate</h4>
+      <p>Upload static to Claude. Get 5 animation concepts + Nano Banana prompt for the missing frame.</p>
+    </div>
+    <div class="anim-step">
+      <div class="num">2</div>
+      <h4>Create Frame</h4>
+      <p>Run Nano Banana prompt. Now you have start + end frames. Cap at 3-4 iterations.</p>
+    </div>
+    <div class="anim-step">
+      <div class="num">3</div>
+      <h4>Get JSON</h4>
+      <p>Same Claude window. Upload both frames. Get Veo 3.1 JSON prompt. All text frozen.</p>
+    </div>
+    <div class="anim-step">
+      <div class="num">4</div>
+      <h4>Animate</h4>
+      <p>Veo 3.1 Fast via Flow. Generate 4-8 variations. Always use Fast mode.</p>
+    </div>
+    <div class="anim-step">
+      <div class="num">5</div>
+      <h4>Iterate</h4>
+      <p>Download GIF. Upload to Claude. Describe problems. Get updated prompt.</p>
+    </div>
+  </div>
+
+  <div class="code-block" style="margin-top: 32px;">
+    <span class="code-label">Step 1 Prompt: Ideation (paste into Claude with your static ad uploaded)</span>
+    <pre>I want to animate this static ad.
+
+Give me 5 animation concepts. For each one, tell me:
+
+1. Is my static the START frame or the END frame?
+2. What does the other frame look like?
+3. What happens between them?
+4. A Nano Banana prompt to create the other frame
+5. Why this motion works for the product
+
+Rules:
+- All text stays frozen throughout
+- No camera movement
+- 3-4 seconds max</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Step 3 Prompt: Veo JSON (same Claude window, upload both frames)</span>
+    <pre>Here's my start frame and end frame.
+
+Give me a Veo 3.1 JSON prompt that animates between them
+based on the concept we discussed.
+
+Rules:
+- All text frozen
+- No camera movement
+- Resolves cleanly into the end frame
+
+Important: Make sure all the copy from my ad is actually
+in the JSON prompt. Include exact text, font descriptions,
+and color values.</pre>
+  </div>
+
+  <div class="callout">
+    <div class="callout-icon">&#128161;</div>
+    <div>
+      <p><strong>Why Claude for animation?</strong> Claude can read GIF motion, which means it can analyze what moved and what went wrong when you're iterating. Upload the output GIF, describe the problem, get an updated prompt. One tool for the entire workflow.</p>
+      <p style="margin-top: 8px;"><strong>Where to animate:</strong> Use Flow (Google DeepMind) for $250/month with unlimited Veo 3.1 access. Always use Fast/Lower Priority. No visible difference from Quality mode.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 32px;">
+    <div class="callout-icon">🔧</div>
+    <div>
+      <p><strong>Common fixes:</strong></p>
+      <p>Warped products: Upload the PDP render. Disappearing logos: Mention explicitly in the JSON. Fonts turning to mush: Include all copy verbatim. Quality degradation: Start fresh. Weird hands: Generate more variations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<div class="footer-cta">
+  <h2>Stop guessing. Start producing.</h2>
+  <p>This is the manual version. Skipper automates the entire pipeline with real customer data, not web search.</p>
+  <div class="btn-group">
+    <a href="https://www.selfgen.co/sub-home" class="btn-primary">Subscribe to SelfStack</a>
+    <a href="https://getskipper.ai" class="btn-secondary">Join the Skipper Beta</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>Built by Will Sartorius. <a href="https://selfstack.beehiiv.com">SelfStack Newsletter</a> · <a href="https://getskipper.ai">getskipper.ai</a> · <a href="https://selfmade.com">SelfMade</a></p>
+</footer>
+
+</body>
+</html>
