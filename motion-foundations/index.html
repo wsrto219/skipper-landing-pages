@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Motion Foundations | Skipper</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: #1a1a2e;
-  background: #f8fafc;
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  color: #1B2A4A;
+  background: #E5F0F6;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -23,8 +23,10 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 16px 40px;
-  background: #fff;
-  border-bottom: 1px solid #e8ecf0;
+  background: rgba(229, 240, 246, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(74, 123, 247, 0.1);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -35,46 +37,61 @@ body {
   gap: 8px;
   font-weight: 800;
   font-size: 20px;
-  color: #1a1a2e;
+  color: #1B2A4A;
   text-decoration: none;
   letter-spacing: -0.5px;
 }
 .nav-logo img { height: 32px; width: auto; }
-.nav-logo span { color: #1a1a2e; }
-.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-logo span { color: #1B2A4A; }
+.nav-links { display: flex; gap: 28px; align-items: center; }
 .nav-links a {
-  color: #64748b;
+  color: #3A5280;
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
+  transition: color 0.2s;
 }
-.nav-links a:hover { color: #1a1a2e; }
+.nav-links a:hover { color: #1B2A4A; }
 .nav-cta {
-  background: #1a1a2e;
+  background: #4A7BF7;
   color: #fff !important;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
+  transition: background 0.2s;
 }
-.nav-cta:hover { background: #2d2d4e; }
+.nav-cta:hover { background: #3B6AE0; }
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 80px 40px 60px;
-  background: linear-gradient(180deg, #f0f4ff 0%, #f8fafc 100%);
+  background: linear-gradient(180deg, #dce8f5 0%, #E5F0F6 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(74, 123, 247, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
 }
 .hero-badge {
   display: inline-block;
-  background: #e8f0fe;
-  color: #4A90D9;
+  background: rgba(74, 123, 247, 0.1);
+  color: #4A7BF7;
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 24px;
   letter-spacing: 0.5px;
+  border: 1px solid rgba(74, 123, 247, 0.15);
 }
 .hero h1 {
   font-size: 48px;
@@ -83,24 +100,26 @@ body {
   max-width: 700px;
   margin: 0 auto 20px;
   letter-spacing: -1.5px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
+.hero h1 .accent { color: #4A7BF7; }
 .hero p {
   font-size: 18px;
-  color: #64748b;
+  color: #3A5280;
   max-width: 560px;
   margin: 0 auto 40px;
   line-height: 1.7;
 }
 
-/* Newsletter CTA */
+/* Newsletter CTA (primary) */
 .newsletter-cta {
-  background: #1a1a2e;
+  background: #1B2A4A;
   border-radius: 16px;
   padding: 48px;
   max-width: 640px;
-  margin: 0 auto 0;
+  margin: 0 auto;
   text-align: center;
+  border: 1px solid rgba(74, 123, 247, 0.2);
 }
 .newsletter-cta h3 {
   color: #fff;
@@ -110,22 +129,90 @@ body {
   letter-spacing: -0.5px;
 }
 .newsletter-cta p {
-  color: #94a3b8;
+  color: #8ba3c7;
   font-size: 15px;
   margin-bottom: 24px;
 }
 .newsletter-btn {
   display: inline-block;
-  background: #4A90D9;
+  background: #4A7BF7;
   color: #fff;
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
   font-size: 16px;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
-.newsletter-btn:hover { background: #3a7bc8; }
+.newsletter-btn:hover { background: #3B6AE0; transform: translateY(-1px); }
+
+/* Will Sartorius intro */
+.will-intro {
+  padding: 60px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.will-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 32px rgba(27, 42, 74, 0.12);
+  margin-bottom: 20px;
+}
+.will-intro h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1B2A4A;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.will-intro .subtitle {
+  color: #3A5280;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+.social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.social-link svg { width: 18px; height: 18px; flex-shrink: 0; }
+.social-link.linkedin {
+  background: #0A66C2;
+  color: #fff;
+}
+.social-link.twitter {
+  background: #1B2A4A;
+  color: #fff;
+}
+.social-link.newsletter-link {
+  background: #4A7BF7;
+  color: #fff;
+}
+.social-link.selfmade-link {
+  background: #fff;
+  color: #1B2A4A;
+  border: 2px solid #1B2A4A;
+}
 
 /* Section */
 .section {
@@ -135,8 +222,8 @@ body {
 }
 .section-label {
   display: inline-block;
-  background: #e8f0fe;
-  color: #4A90D9;
+  background: rgba(74, 123, 247, 0.1);
+  color: #4A7BF7;
   padding: 4px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -150,11 +237,11 @@ body {
   font-weight: 800;
   letter-spacing: -1px;
   margin-bottom: 16px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
 .section > p {
   font-size: 16px;
-  color: #64748b;
+  color: #3A5280;
   max-width: 640px;
   margin-bottom: 40px;
   line-height: 1.7;
@@ -171,7 +258,7 @@ body {
   gap: 24px;
   align-items: flex-start;
   background: #fff;
-  border: 1px solid #e8ecf0;
+  border: 1px solid rgba(74, 123, 247, 0.1);
   border-radius: 12px;
   padding: 32px;
 }
@@ -179,7 +266,7 @@ body {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  background: #4A90D9;
+  background: #4A7BF7;
   color: #fff;
   border-radius: 12px;
   display: flex;
@@ -192,11 +279,11 @@ body {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
 .step p {
   font-size: 15px;
-  color: #64748b;
+  color: #3A5280;
   line-height: 1.6;
 }
 
@@ -209,19 +296,19 @@ body {
 }
 .card {
   background: #fff;
-  border: 1px solid #e8ecf0;
+  border: 1px solid rgba(74, 123, 247, 0.1);
   border-radius: 12px;
   padding: 32px;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .card:hover {
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(74, 123, 247, 0.1);
   transform: translateY(-2px);
 }
 .card-icon {
   width: 48px;
   height: 48px;
-  background: #e8f0fe;
+  background: rgba(74, 123, 247, 0.1);
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -233,11 +320,11 @@ body {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
 .card p {
   font-size: 14px;
-  color: #64748b;
+  color: #3A5280;
   line-height: 1.6;
 }
 
@@ -250,15 +337,15 @@ body {
 }
 .download-card {
   background: #fff;
-  border: 2px solid #e8ecf0;
+  border: 2px solid rgba(74, 123, 247, 0.1);
   border-radius: 16px;
   padding: 40px;
   text-align: center;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 .download-card:hover {
-  border-color: #4A90D9;
-  box-shadow: 0 8px 24px rgba(74,144,217,0.12);
+  border-color: #4A7BF7;
+  box-shadow: 0 8px 24px rgba(74, 123, 247, 0.12);
 }
 .download-card .icon {
   font-size: 48px;
@@ -268,26 +355,26 @@ body {
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
 .download-card p {
   font-size: 14px;
-  color: #64748b;
+  color: #3A5280;
   margin-bottom: 24px;
   line-height: 1.6;
 }
 .download-btn {
   display: inline-block;
-  background: #1a1a2e;
+  background: #1B2A4A;
   color: #fff;
   padding: 12px 28px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   transition: background 0.2s;
 }
-.download-btn:hover { background: #2d2d4e; }
+.download-btn:hover { background: #2d3f66; }
 
 /* Agent table */
 .agent-table {
@@ -298,10 +385,10 @@ body {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid #e8ecf0;
+  border: 1px solid rgba(74, 123, 247, 0.1);
 }
 .agent-table th {
-  background: #1a1a2e;
+  background: #1B2A4A;
   color: #fff;
   padding: 14px 20px;
   text-align: left;
@@ -314,15 +401,15 @@ body {
   padding: 16px 20px;
   border-bottom: 1px solid #f1f5f9;
   font-size: 14px;
-  color: #475569;
+  color: #3A5280;
 }
 .agent-table tr:last-child td { border-bottom: none; }
-.agent-table tr:hover td { background: #f8fafc; }
+.agent-table tr:hover td { background: #f0f5ff; }
 .agent-num {
   display: inline-flex;
   width: 28px;
   height: 28px;
-  background: #4A90D9;
+  background: #4A7BF7;
   color: #fff;
   border-radius: 8px;
   align-items: center;
@@ -330,18 +417,18 @@ body {
   font-weight: 700;
   font-size: 13px;
 }
-.agent-name { font-weight: 700; color: #1a1a2e; }
+.agent-name { font-weight: 700; color: #1B2A4A; }
 
 /* Code block */
 .code-block {
-  background: #1a1a2e;
+  background: #1B2A4A;
   border-radius: 12px;
   padding: 32px;
   margin: 24px 0;
   overflow-x: auto;
 }
 .code-block pre {
-  color: #e2e8f0;
+  color: #c7d5e8;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 13px;
   line-height: 1.7;
@@ -349,7 +436,7 @@ body {
   word-wrap: break-word;
 }
 .code-label {
-  color: #4A90D9;
+  color: #4A7BF7;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -360,8 +447,9 @@ body {
 
 /* Callout */
 .callout {
-  background: #fffbeb;
-  border: 1px solid #fde68a;
+  background: #fff;
+  border: 1px solid rgba(74, 123, 247, 0.15);
+  border-left: 4px solid #4A7BF7;
   border-radius: 12px;
   padding: 24px 32px;
   margin: 32px 0;
@@ -372,14 +460,14 @@ body {
 .callout-icon { font-size: 24px; flex-shrink: 0; }
 .callout p {
   font-size: 14px;
-  color: #92400e;
+  color: #3A5280;
   line-height: 1.6;
 }
-.callout strong { color: #78350f; }
+.callout strong { color: #1B2A4A; }
 
 /* Save reminder */
 .save-reminder {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d2d4e 100%);
+  background: linear-gradient(135deg, #1B2A4A 0%, #2d3f66 100%);
   border-radius: 12px;
   padding: 24px 32px;
   margin: 32px 0;
@@ -389,23 +477,23 @@ body {
 }
 .save-reminder .icon { font-size: 28px; }
 .save-reminder p {
-  color: #e2e8f0;
+  color: #c7d5e8;
   font-size: 14px;
   line-height: 1.6;
 }
 .save-reminder strong { color: #fff; }
 .save-reminder code {
-  background: rgba(255,255,255,0.1);
+  background: rgba(74, 123, 247, 0.2);
   padding: 2px 8px;
   border-radius: 4px;
   font-size: 13px;
-  color: #93c5fd;
+  color: #93b4f5;
 }
 
 /* Divider */
 .divider {
   height: 1px;
-  background: #e8ecf0;
+  background: rgba(74, 123, 247, 0.1);
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -419,7 +507,7 @@ body {
 }
 .anim-step {
   background: #fff;
-  border: 1px solid #e8ecf0;
+  border: 1px solid rgba(74, 123, 247, 0.1);
   border-radius: 12px;
   padding: 24px;
   text-align: center;
@@ -427,7 +515,7 @@ body {
 .anim-step .num {
   width: 36px;
   height: 36px;
-  background: #4A90D9;
+  background: #4A7BF7;
   color: #fff;
   border-radius: 10px;
   display: inline-flex;
@@ -441,17 +529,177 @@ body {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 8px;
-  color: #1a1a2e;
+  color: #1B2A4A;
 }
 .anim-step p {
   font-size: 12px;
-  color: #64748b;
+  color: #3A5280;
   line-height: 1.5;
+}
+
+/* Skipper promo section */
+.skipper-promo {
+  background: #fff;
+  border-radius: 20px;
+  padding: 64px 48px;
+  max-width: 900px;
+  margin: 0 auto 0;
+  text-align: center;
+  border: 2px solid rgba(74, 123, 247, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+.skipper-promo::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(74, 123, 247, 0.05) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.skipper-promo .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 123, 247, 0.08);
+  color: #4A7BF7;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border: 1px solid rgba(74, 123, 247, 0.12);
+}
+.skipper-promo .badge .dot {
+  width: 8px;
+  height: 8px;
+  background: #34d399;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.skipper-promo h2 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1B2A4A;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.skipper-promo h2 .accent { color: #4A7BF7; }
+.skipper-promo p {
+  color: #3A5280;
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+.skipper-promo .features {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.skipper-promo .feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1B2A4A;
+}
+.skipper-promo .feature .check {
+  width: 20px;
+  height: 20px;
+  background: rgba(74, 123, 247, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4A7BF7;
+  font-size: 12px;
+  font-weight: 800;
+}
+.skipper-btn {
+  display: inline-block;
+  background: #4A7BF7;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background 0.2s, transform 0.1s;
+}
+.skipper-btn:hover { background: #3B6AE0; transform: translateY(-1px); }
+.skipper-free {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #7a8ba5;
+}
+
+/* SelfMade CTA */
+.selfmade-cta {
+  background: linear-gradient(135deg, #1B2A4A 0%, #0f1c33 100%);
+  border-radius: 20px;
+  padding: 56px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+.selfmade-cta-text {
+  flex: 1;
+}
+.selfmade-cta-text h3 {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.selfmade-cta-text p {
+  color: #8ba3c7;
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.selfmade-cta-text .book-btn {
+  display: inline-block;
+  background: #fff;
+  color: #1B2A4A;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+.selfmade-cta-text .book-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+.selfmade-cta-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selfmade-cta-logo img {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
 }
 
 /* Footer CTA */
 .footer-cta {
-  background: linear-gradient(135deg, #1a1a2e 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #1B2A4A 0%, #0f1c33 100%);
   padding: 80px 40px;
   text-align: center;
 }
@@ -463,7 +711,7 @@ body {
   margin-bottom: 16px;
 }
 .footer-cta p {
-  color: #94a3b8;
+  color: #8ba3c7;
   font-size: 16px;
   max-width: 480px;
   margin: 0 auto 32px;
@@ -473,43 +721,50 @@ body {
   display: flex;
   gap: 16px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 .btn-primary {
   display: inline-block;
-  background: #4A90D9;
+  background: #4A7BF7;
   color: #fff;
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 700;
   font-size: 16px;
+  transition: background 0.2s;
 }
+.btn-primary:hover { background: #3B6AE0; }
 .btn-secondary {
   display: inline-block;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.08);
   color: #fff;
   padding: 14px 32px;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   font-size: 16px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
 }
+.btn-secondary:hover { background: rgba(255,255,255,0.15); }
 
 /* Footer */
 .footer {
   padding: 32px 40px;
   text-align: center;
-  color: #94a3b8;
+  color: #8ba3c7;
   font-size: 13px;
-  background: #0f172a;
+  background: #0f1c33;
 }
-.footer a { color: #4A90D9; text-decoration: none; }
+.footer a { color: #4A7BF7; text-decoration: none; }
 
 /* Table of Contents */
 .toc-bar {
-  background: #fff;
-  border-bottom: 1px solid #e8ecf0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(74, 123, 247, 0.1);
   padding: 12px 40px;
   position: sticky;
   top: 65px;
@@ -521,7 +776,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 .toc-bar a {
-  color: #64748b;
+  color: #3A5280;
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
@@ -530,8 +785,141 @@ body {
   padding: 4px 0;
 }
 .toc-bar a:hover {
-  color: #4A90D9;
+  color: #4A7BF7;
 }
+
+/* Inline newsletter banner */
+.inline-newsletter {
+  background: rgba(74, 123, 247, 0.06);
+  border: 1px solid rgba(74, 123, 247, 0.12);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 32px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.inline-newsletter p {
+  font-size: 15px;
+  color: #1B2A4A;
+  font-weight: 600;
+}
+.inline-newsletter .mini-btn {
+  display: inline-block;
+  background: #4A7BF7;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.inline-newsletter .mini-btn:hover { background: #3B6AE0; }
+
+/* SelfMade inline banner */
+.selfmade-banner {
+  background: linear-gradient(135deg, #1B2A4A 0%, #2d3f66 100%);
+  border-radius: 12px;
+  padding: 24px 32px;
+  margin: 32px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.selfmade-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.selfmade-banner-left img {
+  height: 28px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+.selfmade-banner p {
+  color: #c7d5e8;
+  font-size: 15px;
+  font-weight: 500;
+}
+.selfmade-banner p strong { color: #fff; }
+.selfmade-banner .book-call-btn {
+  display: inline-block;
+  background: #fff;
+  color: #1B2A4A;
+  padding: 10px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  transition: transform 0.1s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+.selfmade-banner .book-call-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Email signup form */
+.email-form {
+  display: flex;
+  gap: 0;
+  max-width: 440px;
+  margin: 0 auto;
+}
+.email-form input[type="email"] {
+  flex: 1;
+  padding: 14px 20px;
+  border: 2px solid rgba(74, 123, 247, 0.2);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  color: #1B2A4A;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.email-form input[type="email"]:focus {
+  border-color: #4A7BF7;
+}
+.email-form input[type="email"]::placeholder {
+  color: #8ba3c7;
+}
+.email-form button {
+  padding: 14px 28px;
+  background: #4A7BF7;
+  color: #fff;
+  border: 2px solid #4A7BF7;
+  border-radius: 0 10px 10px 0;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.email-form button:hover { background: #3B6AE0; border-color: #3B6AE0; }
+.email-form.dark input[type="email"] {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.15);
+  color: #fff;
+}
+.email-form.dark input[type="email"]::placeholder { color: rgba(255,255,255,0.4); }
+.email-form.dark input[type="email"]:focus { border-color: #4A7BF7; }
+.form-success {
+  color: #34d399;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 0;
+}
+.newsletter-cta .form-success { color: #34d399; }
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -543,6 +931,13 @@ body {
   .nav { padding: 16px 20px; }
   .nav-links { display: none; }
   .toc-bar { padding: 10px 20px; gap: 16px; }
+  .selfmade-cta { flex-direction: column; text-align: center; padding: 40px 24px; }
+  .selfmade-cta-logo { order: -1; }
+  .skipper-promo { padding: 40px 24px; }
+  .skipper-promo .features { flex-direction: column; align-items: center; gap: 12px; }
+  .will-intro { padding: 40px 20px; }
+  .social-links { gap: 8px; }
+  .inline-newsletter { flex-direction: column; text-align: center; }
 }
 </style>
 </head>
@@ -550,24 +945,57 @@ body {
 
 <!-- Nav -->
 <nav class="nav">
-  <a href="https://getskipper.ai" class="nav-logo"><img src="/logo.png" alt="Skipper"><span>skipper</span></a>
+  <a href="https://getskipper.ai" class="nav-logo"><img src="logo.png" alt="Skipper"><span>skipper</span></a>
   <div class="nav-links">
-    <a href="https://getskipper.ai">Home</a>
-    <a href="https://selfstack.beehiiv.com">Newsletter</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#downloads">Downloads</a>
+    <a href="#skipper">Skipper</a>
     <a href="https://www.selfgen.co/sub-home" class="nav-cta">Subscribe to SelfStack</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">MOTION FOUNDATIONS</div>
-  <h1>The complete AI ad creative production system.</h1>
+  <div class="hero-badge">MOTION CREATIVE STRATEGY BOOTCAMP</div>
+  <h1>The complete AI ad creative <span class="accent">production system.</span></h1>
   <p>Research prompts, format templates, scoring agents, and image generation workflows. Everything you need to produce static ad creative with AI. Copy-paste ready.</p>
 
   <div class="newsletter-cta">
-    <h3>Get the weekly workflow</h3>
-    <p>Every Friday: new prompts, format templates, and production techniques. Join 5,000+ creative strategists.</p>
-    <a href="https://www.selfgen.co/sub-home" class="newsletter-btn">Join the Newsletter</a>
+    <h3>Get the weekly SelfStack workflow</h3>
+    <p>Every Friday: new prompts, format templates, and production techniques for AI ad creative. Join 5,000+ creative strategists.</p>
+    <form class="email-form dark" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
+      <input type="hidden" name="double_opt" value="false">
+      <input type="hidden" name="fallback_path" value="/sub-home">
+      <input type="hidden" name="sent_from_orchid" value="true">
+      <input type="email" name="email" placeholder="Enter your email..." required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Will Sartorius intro -->
+<section class="will-intro">
+  <img src="will-face.jpeg" alt="Will Sartorius" class="will-photo">
+  <h2>Will Sartorius</h2>
+  <p class="subtitle">CEO of SelfMade | Building Skipper (getskipper.ai)</p>
+  <div class="social-links">
+    <a href="https://www.selfgen.co/sub-home" class="social-link newsletter-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+      SelfStack Newsletter
+    </a>
+    <a href="https://www.linkedin.com/in/willsartorius/" class="social-link linkedin" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      Follow on LinkedIn
+    </a>
+    <a href="https://x.com/will_sartorius" class="social-link twitter" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Follow on X
+    </a>
+    <a href="https://www.selfmade.co/book-a-call" class="social-link selfmade-link" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
+      Book a Call with SelfMade
+    </a>
   </div>
 </section>
 
@@ -582,6 +1010,8 @@ body {
   <a href="#agents">Scoring Agents</a>
   <a href="#clone-any-ad">Clone Any Ad</a>
   <a href="#animate">Animate</a>
+  <a href="#briefing">Briefing</a>
+  <a href="#skipper">Skipper</a>
 </nav>
 
 <div class="divider"></div>
@@ -631,10 +1061,33 @@ body {
   </div>
 
   <div class="callout">
-    <div class="callout-icon">💡</div>
+    <div class="callout-icon">&#128161;</div>
     <p><strong>Claude Chat users:</strong> upload files to Project Knowledge. <strong>Claude Code users:</strong> save .md files to your project folder. Either way, one workspace, all your assets, every session starts smart.</p>
   </div>
+
+  <div class="selfmade-banner">
+    <div class="selfmade-banner-left">
+      <img src="selfmade-logo.svg" alt="SelfMade">
+      <p><strong>Don't want to build it yourself?</strong> SelfMade sets up the entire system for your brand and runs it.</p>
+    </div>
+    <a href="https://www.selfmade.co/book-a-call" class="book-call-btn">Book a Call</a>
+  </div>
 </section>
+
+<!-- Inline newsletter reminder -->
+<div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
+  <div class="inline-newsletter">
+    <p>New prompts and templates every Friday in SelfStack</p>
+    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
+      <input type="hidden" name="double_opt" value="false">
+      <input type="hidden" name="fallback_path" value="/sub-home">
+      <input type="hidden" name="sent_from_orchid" value="true">
+      <input type="email" name="email" placeholder="Enter your email..." required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
 
 <div class="divider"></div>
 
@@ -656,31 +1109,31 @@ body {
 
   <div class="downloads">
     <div class="download-card">
-      <div class="icon">📋</div>
+      <div class="icon">&#128203;</div>
       <h3>Research Prompt</h3>
       <p>Run once per brand. Generates the complete brand intelligence brief that powers everything else.</p>
       <a href="#research-prompt" class="download-btn">Copy Prompt</a>
     </div>
     <div class="download-card">
-      <div class="icon">🎨</div>
+      <div class="icon">&#127912;</div>
       <h3>Brand Spec Card Prompt</h3>
       <p>Generates the HTML page you screenshot as your brand reference image for AI generation.</p>
       <a href="#brand-cards" class="download-btn">Copy Prompt</a>
     </div>
     <div class="download-card">
-      <div class="icon">📐</div>
-      <h3>Headline Format Template</h3>
+      <div class="icon">&#128208;</div>
+      <h3>Will's Headline Template</h3>
       <p>The first of 15 format "recipe cards." Tells Claude exactly what copy to write and what to tell the image generator.</p>
-      <a href="../headline.md" class="download-btn" download>Download .md</a>
+      <a href="../will_sartorius_headline_template.md" class="download-btn" download>Download .md</a>
     </div>
     <div class="download-card">
-      <div class="icon">🔄</div>
+      <div class="icon">&#128260;</div>
       <h3>Ad-Swipe System</h3>
       <p>Upload a competitor ad. Claude deconstructs it, rebuilds it for your brand. Complete 3-stage reverse-engineering system.</p>
-      <a href="../ad-swipe.md" class="download-btn" download>Download .md</a>
+      <a href="../will_sartorius_ad_swipe.md" class="download-btn" download>Download .md</a>
     </div>
     <div class="download-card">
-      <div class="icon">🤖</div>
+      <div class="icon">&#129302;</div>
       <h3>Scoring Agent Prompt</h3>
       <p>Build your own scoring agents. 7 agents review every brief. Nothing ships below 90.</p>
       <a href="#agents" class="download-btn">Copy Prompt</a>
@@ -699,38 +1152,198 @@ body {
   <div class="code-block">
     <span class="code-label">Copy and paste into Claude</span>
     <pre>INPUT VARIABLES:
+
 Target Brand Name: [INSERT BRAND NAME HERE]
 Target URL: [INSERT URL HERE]
 Hero Product (if known): [INSERT PRODUCT NAME OR "FLAGSHIP"]
 
-Role: Act as a Senior Performance Creative Strategist at a DTC ad agency.
-You specialize in building static ad creative across 15 proven ad formats.
-Your job is to extract every piece of usable information from a brand's
-public presence so a designer can produce ads without needing to ask a
-single follow-up question.
+Role: Act as a Senior Performance Creative Strategist at a DTC ad agency. You specialize in building static ad creative across 15 proven ad formats. Your job is to extract every piece of usable information from a brand's public presence so a designer can produce ads without needing to ask a single follow-up question.
 
-Objective: Build a comprehensive "Ad Creative Research Brief" for the
-Target Brand, covering brand identity, product details, proof points,
-competitive positioning, and founder narrative.
-
-This brief will fuel the generation of static ads across these 15 formats:
-Before &amp; After, Bullet Points, Carousel, Features &amp; Benefits, Founder
-Story, Handwriting, Negative Marketing, New Creative Formats, News, Press,
-Social Proof, Statistics, Testimonial, UGC, Us vs Them.
+Objective: Build a comprehensive "Ad Creative Research Brief" for the Target Brand, covering brand identity, product details, proof points, competitive positioning, and founder narrative. This brief will fuel the generation of static ads across these 15 formats: Before &amp; After, Bullet Points, Carousel, Features &amp; Benefits, Founder Story, Handwriting, Negative Marketing, New Creative Formats, News, Press, Social Proof, Statistics, Testimonial, UGC, Us vs Them.
 
 PHASE 1: BRAND IDENTITY &amp; VISUAL SYSTEM
+
+Search the web for:
+- "[Brand] brand guidelines pdf"
+- "[Brand] press kit" or "media kit"
+- "[Brand] design agency case study" or "who designed [Brand] branding"
+- "[Brand] font" or "what font does [Brand] use"
+- "[Brand] hex color codes"
+
+Visit the Target URL and analyze.
+
+Output as JSON:
+{
+  "brand_identity": {
+    "name": "",
+    "tagline": "",
+    "mission_statement": "",
+    "design_agency": "Name or 'Unknown'",
+    "voice_adjectives": ["", "", ""],
+    "tone_notes": "How they talk to customers",
+    "banned_language": "Words/phrases they clearly avoid or that would feel off-brand"
+  },
+  "visual_system": {
+    "primary_font": "Exact or best guess",
+    "secondary_font": "Exact or best guess",
+    "primary_color_hex": "",
+    "secondary_color_hex": "",
+    "accent_color_hex": "",
+    "background_preference": "white / cream / dark / colorful",
+    "imagery_style": "e.g., clean studio, lifestyle, grainy film, clinical, editorial",
+    "ui_shapes": "rounded / sharp / mixed",
+    "logo_url_or_description": ""
+  }
+}
+
 PHASE 2: PRODUCT INTELLIGENCE
+
+Focus on the Hero Product (or their best-seller if not specified).
+
+Search the web for:
+- "[Brand] [Product] ingredients" or "what's in [Brand]"
+- "[Brand] [Product] how it works"
+- "[Brand] vs [competitor]"
+- "[Brand] [Product] review" on Reddit, Amazon, TrustPilot
+
+Output as JSON:
+{
+  "product_details": {
+    "product_name": "",
+    "product_type": "",
+    "price": "",
+    "price_per_unit_or_serving": "",
+    "hero_claim": "The single biggest promise on the product page",
+    "how_it_works": "1-2 sentence plain-English explanation",
+    "key_ingredients_or_specs": [
+      {"name": "", "benefit": ""}
+    ],
+    "form_factor": "",
+    "usage_instructions": "",
+    "offer_details": {
+      "current_offer": "",
+      "subscription_discount": "",
+      "free_shipping_threshold": "",
+      "guarantee": ""
+    }
+  }
+}
+
 PHASE 3: PROOF POINTS &amp; SOCIAL PROOF
+
+Search the web for:
+- "[Brand] clinical study" or "[Brand] clinically proven"
+- "[Brand] reviews" on TrustPilot, Amazon, their own site
+- "[Brand] before and after results"
+- "[Brand] celebrity" or "[Brand] endorsed by"
+- "[Brand] featured in" or "[Brand] as seen on"
+
+Output as JSON:
+{
+  "statistics_and_data": [
+    {"stat": "", "source": "", "context": ""}
+  ],
+  "press_mentions": [
+    {"publication": "", "quote_or_headline": "", "date": ""}
+  ],
+  "testimonials": [
+    {"quote": "", "name": "", "detail": ""}
+  ],
+  "review_metrics": {
+    "average_rating": "",
+    "total_reviews": "",
+    "platform": ""
+  },
+  "notable_endorsements": [],
+  "certifications_or_badges": []
+}
+
 PHASE 4: TRANSFORMATION &amp; PAIN POINTS
+
+Output as JSON:
+{
+  "customer_pain_points": [
+    {"pain": "", "intensity": "mild / moderate / severe", "current_bad_solution": ""}
+  ],
+  "transformation_claims": [
+    {"before_state": "", "after_state": "", "timeframe": "", "proof_type": ""}
+  ],
+  "emotional_triggers": [],
+  "target_audience": {
+    "primary_demo": "",
+    "psychographic": "",
+    "life_stage": ""
+  }
+}
+
 PHASE 5: COMPETITIVE POSITIONING
+
+Search for:
+- "[Brand] vs" (autocomplete reveals top competitors)
+- "[Brand] alternative"
+- Direct competitor websites for pricing and claims
+
+Output as JSON:
+{
+  "competitive_landscape": {
+    "top_competitors": [
+      {"name": "", "price": "", "key_weakness": "", "common_comparison_point": ""}
+    ],
+    "unique_differentiators": [],
+    "category_conventions": "",
+    "us_vs_them_angles": [
+      {"them": "", "us": "", "why_it_matters": ""}
+    ]
+  }
+}
+
 PHASE 6: FOUNDER &amp; ORIGIN STORY
+
+Search for:
+- "[Brand] founder" or "who founded [Brand]"
+- "[Brand] founder interview" or "[Brand] founder podcast"
+- "[Brand] origin story"
+
+Output as JSON:
+{
+  "founder_story": {
+    "founder_name": "",
+    "founder_title": "",
+    "origin_hook": "",
+    "personal_pain_point": "",
+    "credibility_marker": "",
+    "quotable_moment": "",
+    "mission_beyond_product": ""
+  }
+}
+
 PHASE 7: AD-READY HOOKS &amp; ANGLES
 
-[Full prompt available in the companion doc download]</pre>
+Based on everything above, generate ready-to-use hooks for each ad type:
+
+{
+  "ad_hooks": {
+    "before_after": ["3 hooks that set up a transformation"],
+    "bullet_points": ["3 sets of 3-5 bullet point groupings"],
+    "negative_marketing": ["3 contrarian or 'reasons NOT to buy' hooks"],
+    "news_hooks": ["3 hooks styled as breaking news or urgent updates"],
+    "handwriting_hooks": ["3 short, punchy, handwritten-note-style hooks"],
+    "us_vs_them_hooks": ["3 comparison framings"],
+    "statistic_hooks": ["3 data-led hooks"],
+    "social_proof_hooks": ["3 hooks leveraging reviews, endorsements, or user counts"],
+    "press_hooks": ["3 hooks leveraging media mentions"],
+    "testimonial_hooks": ["3 hooks built around a customer quote"],
+    "founder_story_hooks": ["3 hooks that open with the founder's story"],
+    "features_benefits_hooks": ["3 hooks that lead with a feature and land on a benefit"],
+    "ugc_hooks": ["3 hooks written in customer voice, casual first-person"],
+    "carousel_angles": ["3 multi-slide narrative arcs"],
+    "new_format_hooks": ["3 experimental or pattern-interrupt concepts"]
+  }
+}</pre>
   </div>
 
   <div class="save-reminder">
-    <div class="icon">💾</div>
+    <div class="icon">&#128190;</div>
     <p><strong>Save it.</strong> Tell Claude: <code>Output this as a file called brand-research-brief.json</code>. Download the file. Upload to Project Knowledge.</p>
   </div>
 </section>
@@ -745,17 +1358,17 @@ PHASE 7: AD-READY HOOKS &amp; ANGLES
 
   <div class="cards-grid">
     <div class="card">
-      <div class="card-icon">🎯</div>
+      <div class="card-icon">&#127919;</div>
       <h3>Brand Spec Card</h3>
       <p>Logo, typography system, color palette with hex codes, design rules (always/never), and CTA button style. Everything a designer needs, rendered visually.</p>
     </div>
     <div class="card">
-      <div class="card-icon">📸</div>
+      <div class="card-icon">&#128248;</div>
       <h3>Visual Style Card</h3>
       <p>Brand essence, photography direction, always/never rules for imagery, product styling notes, and mood spectrum. Controls how your brand looks in every generation.</p>
     </div>
     <div class="card">
-      <div class="card-icon">⬇️</div>
+      <div class="card-icon">&#11015;&#65039;</div>
       <h3>Screenshot as PNG</h3>
       <p>Open each HTML in your browser. Screenshot. Save. These two PNGs + a product hero photo get uploaded with every format prompt into fal.ai.</p>
     </div>
@@ -807,7 +1420,7 @@ image to an AI image generator.</pre>
   </div>
 
   <div class="save-reminder">
-    <div class="icon">💾</div>
+    <div class="icon">&#128190;</div>
     <p><strong>Save both cards.</strong> Screenshot each HTML as a PNG. These get uploaded to fal.ai with every generation. Also tell Claude: <code>Output this as brand-spec-card.md</code> and upload to Project Knowledge.</p>
   </div>
 </section>
@@ -822,39 +1435,54 @@ image to an AI image generator.</pre>
 
   <div class="cards-grid">
     <div class="card">
-      <div class="card-icon">📝</div>
+      <div class="card-icon">&#128221;</div>
       <h3>What this format IS</h3>
       <p>One sentence definition. What it does, how it works, why it exists as a distinct format.</p>
     </div>
     <div class="card">
-      <div class="card-icon">✍️</div>
+      <div class="card-icon">&#9997;&#65039;</div>
       <h3>What copy goes where</h3>
       <p>Headline: 3-12 words. Subhead: optional, 5-15 words. CTA: optional, 2-5 words. Word counts enforced.</p>
     </div>
     <div class="card">
-      <div class="card-icon">📐</div>
+      <div class="card-icon">&#128208;</div>
       <h3>What the image should look like</h3>
       <p>Composition, lighting, product position, background, safe zones. Everything the image generator needs.</p>
     </div>
   </div>
 
   <div class="download-card" style="margin-top: 32px; max-width: 480px;">
-    <div class="icon">📄</div>
-    <h3>headline.md</h3>
-    <p>The Headline Format Template. 3 styles, variation vectors, visual-headline coherence rules, and the copy editor agent spec. Ready to paste into Claude.</p>
-    <a href="#" class="download-btn">Download headline.md</a>
+    <div class="icon">&#128196;</div>
+    <h3>will_sartorius_headline_template.md</h3>
+    <p>Will's Headline Template. 3 styles, variation vectors, visual-headline coherence rules, and the copy editor agent spec. Ready to paste into Claude.</p>
+    <a href="../will_sartorius_headline_template.md" class="download-btn" download>Download .md</a>
   </div>
 
   <div class="callout">
-    <div class="callout-icon">🔨</div>
+    <div class="callout-icon">&#128296;</div>
     <p><strong>Build your own:</strong> Collect 5-10 screenshots of ads in the style you want. Upload to Claude. Say: "Analyze these ads. What do they all have in common? Write me a format template with copy slots, word counts, image direction, and rules." Refine. Save.</p>
   </div>
 
   <div class="save-reminder">
-    <div class="icon">💾</div>
+    <div class="icon">&#128190;</div>
     <p><strong>Save it.</strong> Tell Claude: <code>Output this as a file called headline.md</code>. Download. Upload to Project Knowledge. One file per format. Build 15 and you never write a prompt from scratch.</p>
   </div>
 </section>
+
+<!-- Inline newsletter reminder -->
+<div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
+  <div class="inline-newsletter">
+    <p>Want more format templates? They drop weekly in SelfStack</p>
+    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
+      <input type="hidden" name="double_opt" value="false">
+      <input type="hidden" name="fallback_path" value="/sub-home">
+      <input type="hidden" name="sent_from_orchid" value="true">
+      <input type="email" name="email" placeholder="Enter your email..." required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</div>
 
 <div class="divider"></div>
 
@@ -869,7 +1497,7 @@ image to an AI image generator.</pre>
       <tr>
         <th style="width: 60px;">#</th>
         <th style="width: 180px;">Agent</th>
-        <th>What It Checks</th>
+        <th>Some of My Favorites</th>
       </tr>
     </thead>
     <tbody>
@@ -912,19 +1540,35 @@ image to an AI image generator.</pre>
   </table>
 
   <div class="code-block">
-    <span class="code-label">Build your own agent</span>
-    <pre>Create a scoring agent that checks [DIMENSION]. It should:
+    <span class="code-label">Build your own agent — full DIY prompt</span>
+    <pre>I need a copywriting assistant that reviews my ad copy for [YOUR FOCUS].
 
-- Score the brief 1-100
-- List specific strengths (with quotes from the copy)
-- List specific weaknesses (with quotes from the copy)
-- Give concrete fixes to reach 90+
-- Output as a markdown file</pre>
+This assistant should:
+- Understand what "good" looks like for [YOUR FOCUS] in the context of direct response advertising
+- Score every brief 1-100 with clear reasoning for the score
+- Break the score into 5 specific dimensions relevant to [YOUR FOCUS], each scored individually
+- List what's working and why
+- List what's not working and why
+- Give specific, actionable rewrites — not just "make it better," but "change X to Y because Z"
+- Flag any hard violations that should be an instant fail regardless of score (e.g. grammar errors, banned words, off-brand language)
+- Nothing ships below 90
+
+Write this as a comprehensive .md file I can save and reuse. Include examples of what a 60, 80, and 95 score looks like for each dimension so I can calibrate.
+
+</pre>
   </div>
 
   <div class="save-reminder">
-    <div class="icon">💾</div>
+    <div class="icon">&#128190;</div>
     <p><strong>Save each agent.</strong> Tell Claude: <code>Output each agent as its own .md file</code>. agent-persona.md, agent-brand.md, agent-grammar.md. Upload all to Project Knowledge.</p>
+  </div>
+
+  <div class="selfmade-banner">
+    <div class="selfmade-banner-left">
+      <img src="selfmade-logo.svg" alt="SelfMade">
+      <p><strong>Want this built for your brand?</strong> We'll set up your extraction, reference cards, templates, and agents. You just run it.</p>
+    </div>
+    <a href="https://www.selfmade.co/book-a-call" class="book-call-btn">Book a Call</a>
   </div>
 </section>
 
@@ -960,23 +1604,65 @@ image to an AI image generator.</pre>
     </div>
   </div>
 
+  <div class="code-block" style="margin-top: 32px;">
+    <span class="code-label">Step 1: Upload the ad to clone to Claude and paste this prompt</span>
+    <pre>I'm uploading a competitor's ad. Deconstruct it completely.
+Break down every single element you see:
+1. AD FORMAT: What type of ad is this? (feature callout, headline, before/after, testimonial, etc.)
+2. COPY: List every piece of text in the ad — headlines, subheads, product names, feature labels, callouts, CTAs, fine print. Include the exact words and where each one is positioned.
+3. PRODUCT: What is the product? Describe its angle, orientation, position in the frame, and how much space it takes up.
+4. LAYOUT: How are all the elements arranged relative to each other? What's the visual hierarchy — what does your eye hit first, second, third?
+5. BACKGROUND: Describe exactly what's behind the product — color, gradient, texture, photo, etc.
+6. TYPOGRAPHY: Describe the font sizes relative to each other, weights (bold/light), casing (uppercase/lowercase), and alignment for each text element.
+7. VISUAL DEVICES: Leader lines, arrows, badges, icons, borders, overlays, shadows — anything decorative that connects or highlights elements.
+8. COLOR PALETTE: What are the dominant colors and how is each one used?
+9. SPACING: Is it tight or airy? How much breathing room between elements? Centered or asymmetric?
+
+Be thorough. I want someone who has never seen this ad to understand exactly what it looks like from your description alone.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Step 2: Make it yours — paste this after the deconstruction</span>
+    <pre>Now rewrite this ad for my brand.
+
+Brand: [YOUR BRAND]
+Product: [YOUR PRODUCT — description, price, key claims]
+
+Using the ad deconstruction above, write me a detailed image generation prompt for Nano Banana 2 that recreates the same ad layout and structure but for my product.
+
+The prompt must include:
+- The exact dimensions (1080x1920, 9:16 vertical)
+- The background treatment (recreate the same style but adjusted for my product's color)
+- Product placement: same position, angle, and scale as the original but describing MY product
+- Every piece of copy rewritten for my brand and product — headline, subhead, every feature callout — keeping the same tone, length, and structure as the original
+- Typography direction: same size relationships, weights, casing, and alignment as the original
+- All visual devices: leader lines, spacing, everything from the deconstruction
+- Color palette guidance based on my brand
+- A note that I will be uploading 2-3 of my brand's existing ads as reference images — tell the generator to match the exact colors, fonts, and visual style from those references, not from the competitor's ad
+- A note that I will upload a product photo — tell the generator to use it for accurate product representation
+- Safe zones: no critical content in the top 270px or bottom 340px (platform UI overlays)
+- Rules: all text rendered in the image, no text smaller than 24px, sufficient contrast, one continuous image with no panels or borders
+
+The prompt should be ready to copy-paste directly into Nano Banana with no edits needed.</pre>
+  </div>
+
   <!-- Stage 1: Deconstruct -->
-  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 1: Deconstruct the Competitor Ad</h3>
-  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">When a competitor ad image is uploaded, Claude extracts four layers of analysis.</p>
+  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1B2A4A;">Stage 1: Deconstruct the Competitor Ad</h3>
+  <p style="font-size: 15px; color: #3A5280; margin-bottom: 24px; line-height: 1.7;">When a competitor ad image is uploaded, Claude extracts four layers of analysis.</p>
 
   <div class="cards-grid">
     <div class="card">
-      <div class="card-icon">📐</div>
+      <div class="card-icon">&#128208;</div>
       <h3>Layout Analysis</h3>
       <p>Aspect ratio, format type (headline, before-after, testimonial, etc.), style match, composition (text position, product position, negative space, visual hierarchy).</p>
     </div>
     <div class="card">
-      <div class="card-icon">🔤</div>
+      <div class="card-icon">&#128292;</div>
       <h3>Typography Extraction</h3>
       <p>Headline treatment (case, font category, weight, alignment, spacing, color), subhead treatment, body treatment, and CTA treatment (shape, fill, text case).</p>
     </div>
     <div class="card">
-      <div class="card-icon">🎨</div>
+      <div class="card-icon">&#127912;</div>
       <h3>Color &amp; Mood</h3>
       <p>Background type, dominant/secondary colors, full palette, lighting style, mood adjectives, and energy level (quiet to urgent).</p>
     </div>
@@ -986,11 +1672,11 @@ image to an AI image generator.</pre>
     <span class="code-label">Layout Analysis JSON (extracted by Claude)</span>
     <pre>{
   "aspect_ratio": "",
-  "format_type": "headline | before-after | testimonial | social-proof | us-vs-them | statistics | features-benefits | bullet-points | press | news | ugc | founder-story | carousel | handwriting | negative-marketing | other",
+  "format_type": "headline | before-after | testimonial | social-proof | ...",
   "style_match": "Which style (A/B/C/D) from the matched format spec",
   "composition": {
-    "text_position": "top-third | center | bottom-third | left-aligned | right-aligned | overlaid",
-    "product_position": "center | left | right | top | bottom | absent | background",
+    "text_position": "top-third | center | bottom-third | ...",
+    "product_position": "center | left | right | top | bottom | absent",
     "product_frame_percentage": "estimated % of frame",
     "negative_space": "minimal | moderate | generous",
     "visual_hierarchy": "What the eye reads first, second, third"
@@ -1009,27 +1695,15 @@ image to an AI image generator.</pre>
       "position_in_frame": ""
     }
   ],
-  "total_text_elements": "",
-  "copy_strategy": "What is the ad actually arguing? What is the single message?",
+  "copy_strategy": "What is the ad actually arguing?",
   "emotional_register": "What emotion is it trying to trigger?",
   "proof_mechanism": "How does it prove its claim?"
 }</pre>
   </div>
 
-  <div class="code-block">
-    <span class="code-label">What Makes This Ad Work (extracted by Claude)</span>
-    <pre>{
-  "strongest_element": "The single best creative decision in this ad",
-  "weakest_element": "The single worst creative decision",
-  "visual_copy_coherence": "Does the image reinforce the copy? Yes/No and why",
-  "scroll_stop_factor": "What would make someone stop scrolling? Rate 1-10",
-  "steal_worthy": ["List 1-3 specific techniques worth borrowing"]
-}</pre>
-  </div>
-
   <!-- Stage 2: Rebuild -->
-  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 2: Rebuild for Your Brand</h3>
-  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">Using the deconstruction, Claude generates a complete ad prompt that keeps the structural techniques that work, replaces all copy with YOUR brand's voice, applies YOUR visual system from the spec sheet, and maintains YOUR format spec text limits.</p>
+  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1B2A4A;">Stage 2: Rebuild for Your Brand</h3>
+  <p style="font-size: 15px; color: #3A5280; margin-bottom: 24px; line-height: 1.7;">Using the deconstruction, Claude generates a complete ad prompt that keeps the structural techniques that work, replaces all copy with YOUR brand's voice, applies YOUR visual system from the spec sheet, and maintains YOUR format spec text limits.</p>
 
   <div class="code-block">
     <span class="code-label">Rebuild Template Prompt (generated by Claude)</span>
@@ -1041,15 +1715,11 @@ uploaded spec sheet.
 CREATIVE ORIGIN:
 This ad is inspired by a competitor's creative approach. We are
 borrowing the STRUCTURE and COMPOSITION techniques, not the copy,
-colors, or brand identity. The structural techniques being borrowed
-are: [LIST STEAL-WORTHY TECHNIQUES FROM DECONSTRUCTION].
+colors, or brand identity.
 
 BRAND CONTEXT:
 This is [BRAND NAME]. Reference the uploaded brand spec sheet for
 all visual identity decisions.
-- Fonts: [FROM SPEC SHEET]
-- Colors: [FROM SPEC SHEET]
-- Voice: [FROM BRAND BRIEF]
 
 PERSONA: [PERSONA NAME AND DESCRIPTION]
 ANGLE: [ANGLE]
@@ -1061,51 +1731,16 @@ One continuous image filling the entire frame at [ASPECT RATIO].
 - Product position: [MATCH COMPETITOR'S PRODUCT POSITION]
 - Text position: [MATCH COMPETITOR'S TEXT POSITION]
 - Visual hierarchy: [MATCH COMPETITOR'S READING ORDER]
-- Negative space: [MATCH COMPETITOR'S SPACING APPROACH]
-
-COPY ELEMENTS:
-This ad has exactly [N] text elements. No more.
-1. [ROLE]: "[YOUR COPY]"
-   - Font: [FROM SPEC SHEET]
-   - Color: [FROM SPEC SHEET]
-   - Treatment: [MATCH COMPETITOR'S TREATMENT]
 
 SAFE ZONES:
-Top 270px and bottom 340px clear. Left margin 40px. Right margin
-120px from y=600 downward.
+Top 270px and bottom 340px clear.
 
 RULES:
-1. Exactly [N] text elements. No more.
-2. Reference the uploaded brand spec sheet for ALL visual identity.
-3. Product must be accurately represented per uploaded product image.
-4. All critical content within the primary content zone.
-5. No text smaller than 24px at 1080px width.
-6. One continuous image. No panels, borders, or grid lines.
-7. No em dashes anywhere in rendered copy.
-8. Every data point appears exactly once.
-9. This must look like YOUR brand's ad, not a copy of the competitor's.</pre>
-  </div>
-
-  <!-- Stage 3: Copy Generation -->
-  <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1a1a2e;">Stage 3: Copy Generation</h3>
-  <p style="font-size: 15px; color: #64748b; margin-bottom: 24px; line-height: 1.7;">Before inserting copy into the prompt, Claude generates it using the matched format spec and runs it through quality checks.</p>
-
-  <div class="cards-grid">
-    <div class="card">
-      <div class="card-icon">1</div>
-      <h3>Load Format Spec</h3>
-      <p>Load the matched format spec (.md file) and use the copy template from the matched style. Write copy that fits the persona, angle, and emotion.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">2</div>
-      <h3>Verify Word Counts</h3>
-      <p>Check every element against word count limits from the template. Every headline, subhead, and CTA must fall within the specified range.</p>
-    </div>
-    <div class="card">
-      <div class="card-icon">3</div>
-      <h3>Run Agent 7 Checklist</h3>
-      <p>Grammar check, spelling check, punctuation check, banned characters (no em dashes, no semicolons in headlines), number consistency, duplicate content check, word count compliance.</p>
-    </div>
+1. Reference the uploaded brand spec sheet for ALL visual identity.
+2. Product must be accurately represented per uploaded product image.
+3. No text smaller than 24px at 1080px width.
+4. One continuous image. No panels, borders, or grid lines.
+5. This must look like YOUR brand's ad, not a copy of the competitor's.</pre>
   </div>
 
   <div class="callout" style="margin-top: 24px;">
@@ -1114,10 +1749,10 @@ RULES:
   </div>
 
   <div class="download-card" style="margin-top: 32px; max-width: 480px;">
-    <div class="icon">📄</div>
-    <h3>ad-swipe.md</h3>
-    <p>The complete Ad-Swipe reverse-engineering system. All 3 stages, all JSON templates, the full rebuild prompt. Ready to upload to your Claude Project.</p>
-    <a href="/ad-swipe.md" class="download-btn" download>Download ad-swipe.md</a>
+    <div class="icon">&#128196;</div>
+    <h3>will_sartorius_ad_swipe.md</h3>
+    <p>Will's complete Ad-Swipe reverse-engineering system. All 3 stages, all JSON templates, the full rebuild prompt. Ready to upload to your Claude Project.</p>
+    <a href="../will_sartorius_ad_swipe.md" class="download-btn" download>Download .md</a>
   </div>
 </section>
 
@@ -1158,53 +1793,162 @@ RULES:
   </div>
 
   <div class="code-block" style="margin-top: 32px;">
-    <span class="code-label">Step 1 Prompt: Ideation (paste into Claude with your static ad uploaded)</span>
-    <pre>I want to animate this static ad.
-
-Give me 5 animation concepts. For each one, tell me:
-
-1. Is my static the START frame or the END frame?
-2. What does the other frame look like?
-3. What happens between them?
-4. A Nano Banana prompt to create the other frame
-5. Why this motion works for the product
-
-Rules:
-- All text stays frozen throughout
-- No camera movement
-- 3-4 seconds max</pre>
+    <span class="code-label">Step 1 Prompt: Come up with ideas (paste into Claude with your static ad uploaded)</span>
+    <pre>I want to animate this static ad. Give me 5 animation concepts. For each one tell me: (1) Is my static the START or END frame? (2) What does the other frame look like — describe it in detail? (3) What motion happens between the two frames? (4) Why does this motion make sense for the product? Rules: all text must stay frozen in place throughout the animation, no camera movement, 3-4 seconds max</pre>
   </div>
 
   <div class="code-block">
-    <span class="code-label">Step 3 Prompt: Veo JSON (same Claude window, upload both frames)</span>
-    <pre>Here's my start frame and end frame.
+    <span class="code-label">Step 2 Prompt: Generate the missing frame with Nano Banana 2</span>
+    <pre>I want to animate this static ad. The concept is: [describe your chosen concept from step 1, e.g. "gummy bears march into frame and lift the product up into position. My static is the END frame."]
 
-Give me a Veo 3.1 JSON prompt that animates between them
-based on the concept we discussed.
+My static is the [END] frame.
 
-Rules:
-- All text frozen
-- No camera movement
-- Resolves cleanly into the end frame
+I need you to write a Nano Banana 2 prompt to generate the other frame as a still image. Based on the animation concept, figure out which elements need to be added, removed, or repositioned in the missing frame.
 
-Important: Make sure all the copy from my ad is actually
-in the JSON prompt. Include exact text, font descriptions,
-and color values.</pre>
+Every piece of text must be reproduced verbatim — same words, same position, same fonts, colors, and sizing. The background, lighting, and overall style must match my static exactly. Only change what needs to be different for the other frame of the animation.
+
+The prompt must specify exact dimensions (1080x1920). I will upload my original static as a reference image — tell the generator to match everything from it except the elements that change between frames.
+
+Be extremely detailed — NB2 won't guess, it only does what you tell it.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Step 4 Prompt: Get the Veo 3.1 video prompt (upload both frames to Claude)</span>
+    <pre>I'm uploading two frames for a video animation.
+
+IMAGE 1 is the START frame.
+IMAGE 2 is the END frame.
+
+The animation concept: [describe your concept, e.g. "gummy bears march into frame and lift the product up into its final position."]
+
+Write me a comprehensive Veo 3.1 JSON prompt that creates a smooth 8 second animation from the start frame to the end frame.
+
+The prompt MUST include:
+- Every piece of text from both frames reproduced verbatim so the fonts don't degrade during generation
+- Explicit instruction that ALL text stays completely frozen in place throughout — no movement, no warping, no fading
+- No camera movement whatsoever
+- The background stays perfectly still
+- A detailed description of the motion: what enters, from where, how it moves, the physics and easing
+- The animation must resolve cleanly into the end frame as its final resting state
+- Describe what stays still and what moves — be explicit about both
+
+Format as a ready-to-paste JSON prompt for Veo 3.1.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Step 6 Prompt: Iterate on your animation (upload GIF + both original frames)</span>
+    <pre>I'm uploading the animation output plus my original start frame and end frame for reference.
+
+Here's what's wrong with the animation:
+[describe your issues — e.g. "no gummy bears appeared, the text warps at 3 seconds, the tube just floats up on its own instead of being lifted, there's a weird color shift in the background"]
+
+Give me a corrected Veo 3.1 JSON prompt that fixes these issues. Keep everything that worked well.</pre>
   </div>
 
   <div class="callout">
     <div class="callout-icon">&#128161;</div>
     <div>
-      <p><strong>Why Claude for animation?</strong> Claude can read GIF motion, which means it can analyze what moved and what went wrong when you're iterating. Upload the output GIF, describe the problem, get an updated prompt. One tool for the entire workflow.</p>
-      <p style="margin-top: 8px;"><strong>Where to animate:</strong> Use Flow (Google DeepMind) for $250/month with unlimited Veo 3.1 access. Always use Fast/Lower Priority. No visible difference from Quality mode.</p>
+      <p><strong>Where to animate:</strong> Use Flow (<a href="https://labs.google/flow" style="color: #4A7BF7;">labs.google/flow</a>) for Veo 3.1 access. Always use Fast/Lower Priority mode.</p>
     </div>
   </div>
+</section>
 
-  <div class="callout" style="margin-top: 32px;">
-    <div class="callout-icon">🔧</div>
-    <div>
-      <p><strong>Common fixes:</strong></p>
-      <p>Warped products: Upload the PDP render. Disappearing logos: Mention explicitly in the JSON. Fonts turning to mush: Include all copy verbatim. Quality degradation: Start fresh. Weird hands: Generate more variations.</p>
+<div class="divider"></div>
+
+<!-- Briefing & Production Prompts -->
+<section class="section" id="briefing">
+  <div class="section-label">Production</div>
+  <h2>Brief, Score, Generate, Multiply</h2>
+  <p>Once your system is set up (brand extraction, reference cards, format templates, agents), these are the prompts you run every time you create an ad.</p>
+
+  <div class="code-block">
+    <span class="code-label">Starter prompt for briefing</span>
+    <pre>I want to create a [HEADLINE] ad for [PRODUCT NAME].
+
+Persona: [e.g. Sensitive Skin Sufferer]
+Angle: [e.g. Transformation]
+Emotion: [e.g. Relief]
+
+Use my brand bible and format template to write the full brief: headline, subhead, copy, creative direction, everything. Follow the format template exactly.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Starter prompt for agent review</span>
+    <pre>Please have the agents review the copy.
+
+Please iterate on the copy until every agent gives it a 90+ / 100.</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Convert approved copy to a Nano Banana 2 prompt</span>
+    <pre>Convert this into a ready-to-paste Nano Banana 2 image generation prompt.
+
+The prompt must include:
+- Exact dimensions (1080x1920, 9:16 vertical)
+- Every piece of approved copy rendered verbatim in the image
+- Product position, angle, and scale from the creative direction
+- Background treatment from the creative direction
+- Typography: exact font names, weights, and color from the brand spec card
+- Safe zones (top 270px, bottom 340px clear of critical content)
+- Lighting and energy direction
+- Logo placement per brand spec sheet
+- All 10 universal rules (no panels, no text under 24px,
+  sufficient contrast, photorealistic product, etc.)
+- A note that I will upload the brand spec card, visual style
+  card, and product photo as reference images</pre>
+  </div>
+
+  <div class="code-block">
+    <span class="code-label">Multiply one winning ad across all your format templates</span>
+    <pre>I have a winning ad brief that I want to multiply across different format templates. The original brief is below.
+
+Here are my format templates: [upload or list your .md template files]
+
+For EACH format template, rewrite the brief to fit that format exactly:
+- Keep the same persona, angle, emotion, and core product truth
+- Rewrite the copy to match the new format's structure
+  (headline lengths, copy slots, required elements)
+- Follow the format template's copy rules and variation vectors
+- Adjust the creative direction to match the new format's
+  visual requirements
+- Write a complete Nano Banana 2 image generation prompt for each
+
+Do not change the strategic foundation. Only change the packaging.
+
+The original brief:
+[paste your winning brief here]</pre>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Skipper Section -->
+<section class="section" id="skipper" style="padding-bottom: 40px;">
+  <div class="skipper-promo">
+    <div class="badge"><span class="dot"></span> Now accepting beta testers</div>
+    <h2>This is the manual version.<br>Skipper <span class="accent">automates it.</span></h2>
+    <p>Skipper scrapes your reviews, discovers who is buying and why, and generates ad creative targeted to real buyer personas. On brand. Data-driven. No prompt engineering required.</p>
+    <div class="features">
+      <div class="feature"><span class="check">&#10003;</span> Scrapes real customer reviews</div>
+      <div class="feature"><span class="check">&#10003;</span> Builds buyer personas from data</div>
+      <div class="feature"><span class="check">&#10003;</span> Generates on-brand ad creative</div>
+      <div class="feature"><span class="check">&#10003;</span> Free during beta</div>
+    </div>
+    <a href="https://getskipper.ai" class="skipper-btn">Request Beta Access</a>
+    <p class="skipper-free">Free during beta. No credit card required.</p>
+  </div>
+</section>
+
+<!-- SelfMade CTA -->
+<section class="section" style="padding-top: 0;">
+  <div class="selfmade-cta">
+    <div class="selfmade-cta-text">
+      <h3>Need it done for you?</h3>
+      <p>SelfMade is a performance creative agency powered by AI. We build the ad systems, run the creative strategy, and produce the ads. If you want results without the setup, let's talk.</p>
+      <a href="https://www.selfmade.co/book-a-call" class="book-btn">Book a Call</a>
+    </div>
+    <div class="selfmade-cta-logo">
+      <img src="selfmade-logo.svg" alt="SelfMade">
     </div>
   </div>
 </section>
@@ -1212,17 +1956,45 @@ and color values.</pre>
 <!-- Footer CTA -->
 <div class="footer-cta">
   <h2>Stop guessing. Start producing.</h2>
-  <p>This is the manual version. Skipper automates the entire pipeline with real customer data, not web search.</p>
+  <p>Subscribe to SelfStack. Get prompts, templates, and workflows every Friday.</p>
+  <form class="email-form dark" style="margin-bottom: 24px;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+    <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
+    <input type="hidden" name="double_opt" value="false">
+    <input type="hidden" name="fallback_path" value="/sub-home">
+    <input type="hidden" name="sent_from_orchid" value="true">
+    <input type="email" name="email" placeholder="Enter your email..." required>
+    <button type="submit">Subscribe</button>
+  </form>
   <div class="btn-group">
-    <a href="https://www.selfgen.co/sub-home" class="btn-primary">Subscribe to SelfStack</a>
     <a href="https://getskipper.ai" class="btn-secondary">Join the Skipper Beta</a>
+    <a href="https://www.selfmade.co/book-a-call" class="btn-secondary">Book a Call</a>
   </div>
 </div>
 
 <!-- Footer -->
 <footer class="footer">
-  <p>Built by Will Sartorius. <a href="https://selfstack.beehiiv.com">SelfStack Newsletter</a> · <a href="https://getskipper.ai">getskipper.ai</a> · <a href="https://selfmade.com">SelfMade</a></p>
+  <p>Built by <a href="https://www.linkedin.com/in/willsartorius/">Will Sartorius</a>. <a href="https://www.selfgen.co/sub-home">SelfStack Newsletter</a> &middot; <a href="https://getskipper.ai">getskipper.ai</a> &middot; <a href="https://www.selfmade.co">SelfMade</a> &middot; <a href="https://www.linkedin.com/in/willsartorius/">LinkedIn</a> &middot; <a href="https://x.com/will_sartorius">X/Twitter</a></p>
 </footer>
 
+<script>
+function handleSubscribe(form) {
+  const email = form.querySelector('input[type="email"]').value;
+  if (!email) return false;
+
+  const formData = new FormData(form);
+
+  fetch('https://www.selfgen.co/create', {
+    method: 'POST',
+    body: formData,
+    mode: 'no-cors'
+  }).then(() => {
+    form.innerHTML = '<p class="form-success">Subscribed! Check your inbox.</p>';
+  }).catch(() => {
+    form.innerHTML = '<p class="form-success">Subscribed! Check your inbox.</p>';
+  });
+
+  return false;
+}
+</script>
 </body>
 </html>
