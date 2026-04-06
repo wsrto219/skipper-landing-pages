@@ -820,6 +820,146 @@ body {
 }
 .inline-newsletter .mini-btn:hover { background: #3B6AE0; }
 
+/* Skipper beta form */
+.skipper-form-section {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px;
+  margin-top: 28px;
+  border: 1px solid rgba(74, 123, 247, 0.1);
+}
+.skipper-form-section h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1B2A4A;
+  margin-bottom: 4px;
+}
+.skipper-form-section > p {
+  font-size: 14px;
+  color: #3A5280;
+  margin-bottom: 24px;
+}
+.skipper-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.skipper-form .full-width { grid-column: 1 / -1; }
+.skipper-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B2A4A;
+  display: block;
+  margin-bottom: 6px;
+}
+.skipper-form input,
+.skipper-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(74, 123, 247, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: #1B2A4A;
+  background: #f8fafc;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.skipper-form input:focus,
+.skipper-form select:focus {
+  border-color: #4A7BF7;
+  background: #fff;
+}
+.skipper-form input::placeholder { color: #8ba3c7; }
+.skipper-form .submit-btn {
+  display: inline-block;
+  background: #4A7BF7;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.skipper-form .submit-btn:hover { background: #3B6AE0; }
+.skipper-form-success {
+  text-align: center;
+  padding: 32px;
+}
+.skipper-form-success h3 {
+  color: #1B2A4A;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+.skipper-form-success p { color: #3A5280; font-size: 15px; }
+
+@media (max-width: 768px) {
+  .skipper-form { grid-template-columns: 1fr; }
+}
+
+/* Consulting CTA */
+.consulting-cta {
+  background: #fff;
+  border: 2px solid rgba(74, 123, 247, 0.15);
+  border-radius: 20px;
+  padding: 56px 48px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.consulting-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #4A7BF7, #7B61FF, #4A7BF7);
+}
+.consulting-cta .consul-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4A7BF7;
+  margin-bottom: 20px;
+}
+.consulting-cta h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #1B2A4A;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+.consulting-cta p {
+  color: #3A5280;
+  font-size: 16px;
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+.consulting-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #4A7BF7 0%, #7B61FF 100%);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: transform 0.1s, box-shadow 0.2s;
+}
+.consulting-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74, 123, 247, 0.3);
+}
+
 /* SelfMade inline banner */
 .selfmade-banner {
   background: linear-gradient(135deg, #1B2A4A 0%, #2d3f66 100%);
@@ -963,7 +1103,7 @@ body {
   <div class="newsletter-cta">
     <h3>Get the weekly SelfStack workflow</h3>
     <p>Every Friday: new prompts, format templates, and production techniques for AI ad creative. Join 5,000+ creative strategists.</p>
-    <form class="email-form dark" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+    <form class="email-form dark" action="https://www.selfgen.co/create" method="post" target="_blank">
       <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
       <input type="hidden" name="double_opt" value="false">
       <input type="hidden" name="fallback_path" value="/sub-home">
@@ -992,9 +1132,9 @@ body {
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       Follow on X
     </a>
-    <a href="https://www.selfmade.co/book-a-call" class="social-link selfmade-link" target="_blank" rel="noopener">
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="social-link selfmade-link" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
-      Book a Call with SelfMade
+      Book a Consulting Call
     </a>
   </div>
 </section>
@@ -1078,7 +1218,7 @@ body {
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>New prompts and templates every Friday in SelfStack</p>
-    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" target="_blank">
       <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
       <input type="hidden" name="double_opt" value="false">
       <input type="hidden" name="fallback_path" value="/sub-home">
@@ -1473,7 +1613,7 @@ image to an AI image generator.</pre>
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>Want more format templates? They drop weekly in SelfStack</p>
-    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" target="_blank">
       <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
       <input type="hidden" name="double_opt" value="false">
       <input type="hidden" name="fallback_path" value="/sub-home">
@@ -1934,8 +2074,74 @@ The original brief:
       <div class="feature"><span class="check">&#10003;</span> Generates on-brand ad creative</div>
       <div class="feature"><span class="check">&#10003;</span> Free during beta</div>
     </div>
-    <a href="https://getskipper.ai" class="skipper-btn">Request Beta Access</a>
+    <a href="https://getskipper.ai" class="skipper-btn">Learn More</a>
     <p class="skipper-free">Free during beta. No credit card required.</p>
+
+    <div class="skipper-form-section">
+      <h3>Request Beta Access</h3>
+      <p>Sign up directly — we'll reach out when your spot is ready.</p>
+      <form class="skipper-form" id="skipperBetaForm" onsubmit="return submitSkipperForm(this)">
+        <div>
+          <label for="sk-name">Full Name</label>
+          <input type="text" id="sk-name" name="fullName" placeholder="Jane Smith" required>
+        </div>
+        <div>
+          <label for="sk-email">Email</label>
+          <input type="email" id="sk-email" name="email" placeholder="jane@company.com" required>
+        </div>
+        <div>
+          <label for="sk-company">Company</label>
+          <input type="text" id="sk-company" name="company" placeholder="Your Company" required>
+        </div>
+        <div>
+          <label for="sk-url">Brand URL</label>
+          <input type="url" id="sk-url" name="brandUrl" placeholder="https://yourcompany.com">
+        </div>
+        <div>
+          <label for="sk-role">Role</label>
+          <select id="sk-role" name="role" required>
+            <option value="">Select...</option>
+            <option value="Founder">Founder</option>
+            <option value="Marketer">Marketer</option>
+            <option value="Agency">Agency Owner</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="sk-spend">Monthly Ad Spend</label>
+          <select id="sk-spend" name="adSpend" required>
+            <option value="">Select...</option>
+            <option value="<5k">$0 - $5k</option>
+            <option value="5k-25k">$5k - $25k</option>
+            <option value="25k-100k">$25k - $100k</option>
+            <option value="100k+">$100k+</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <label for="sk-source">How did you hear about Skipper?</label>
+          <select id="sk-source" name="source">
+            <option value="">Select...</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Twitter">Twitter/X</option>
+            <option value="Friend">Friend/Colleague</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="full-width">
+          <button type="submit" class="submit-btn">Request Beta Access</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Private Consulting CTA -->
+<section class="section" style="padding-top: 0; padding-bottom: 40px;">
+  <div class="consulting-cta">
+    <img src="will-face.jpeg" alt="Will Sartorius" class="consul-photo">
+    <h2>Book a private consulting call</h2>
+    <p>Want 1-on-1 help setting up your AI creative system? I'll walk you through the entire process, audit your current setup, and build a custom plan for your brand.</p>
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="consulting-btn" target="_blank" rel="noopener">Book a Consulting Call with Will</a>
   </div>
 </section>
 
@@ -1957,7 +2163,7 @@ The original brief:
 <div class="footer-cta">
   <h2>Stop guessing. Start producing.</h2>
   <p>Subscribe to SelfStack. Get prompts, templates, and workflows every Friday.</p>
-  <form class="email-form dark" style="margin-bottom: 24px;" action="https://www.selfgen.co/create" method="post" onsubmit="return handleSubscribe(this)">
+  <form class="email-form dark" style="margin-bottom: 24px;" action="https://www.selfgen.co/create" method="post" target="_blank">
     <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
     <input type="hidden" name="double_opt" value="false">
     <input type="hidden" name="fallback_path" value="/sub-home">
@@ -1967,7 +2173,8 @@ The original brief:
   </form>
   <div class="btn-group">
     <a href="https://getskipper.ai" class="btn-secondary">Join the Skipper Beta</a>
-    <a href="https://www.selfmade.co/book-a-call" class="btn-secondary">Book a Call</a>
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="btn-secondary">Consulting Call with Will</a>
+    <a href="https://www.selfmade.co/book-a-call" class="btn-secondary">SelfMade Agency Call</a>
   </div>
 </div>
 
@@ -1977,20 +2184,29 @@ The original brief:
 </footer>
 
 <script>
-function handleSubscribe(form) {
-  const email = form.querySelector('input[type="email"]').value;
-  if (!email) return false;
+function submitSkipperForm(form) {
+  const data = {
+    fullName: form.fullName.value,
+    email: form.email.value,
+    company: form.company.value,
+    brandUrl: form.brandUrl.value,
+    role: form.role.value,
+    adSpend: form.adSpend.value,
+    source: form.source.value
+  };
 
-  const formData = new FormData(form);
+  const btn = form.querySelector('.submit-btn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
 
-  fetch('https://www.selfgen.co/create', {
+  fetch('https://script.google.com/macros/s/AKfycbx9KZLWRWHx5BbIHgdRmhtdpXZWEUZMfRhlgBUk17YwP0yuJPzSCyg5wnyKFFMCG3Lq3g/exec', {
     method: 'POST',
-    body: formData,
-    mode: 'no-cors'
-  }).then(() => {
-    form.innerHTML = '<p class="form-success">Subscribed! Check your inbox.</p>';
-  }).catch(() => {
-    form.innerHTML = '<p class="form-success">Subscribed! Check your inbox.</p>';
+    headers: { 'Content-Type': 'text/plain' },
+    body: JSON.stringify(data)
+  }).then(function() {
+    form.parentElement.innerHTML = '<div class="skipper-form-success"><h3>You\'re on the list!</h3><p>We\'ll reach out when your beta spot is ready.</p></div>';
+  }).catch(function() {
+    form.parentElement.innerHTML = '<div class="skipper-form-success"><h3>You\'re on the list!</h3><p>We\'ll reach out when your beta spot is ready.</p></div>';
   });
 
   return false;
