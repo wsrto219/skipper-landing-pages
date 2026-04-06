@@ -1065,7 +1065,9 @@ body {
   .anim-steps { grid-template-columns: 1fr; }
   .section { padding: 48px 20px; }
   .nav { padding: 16px 20px; }
-  .nav-links { display: none; }
+  .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links { gap: 0; }
+  .nav-cta { font-size: 13px !important; padding: 8px 14px !important; }
   .toc-bar { padding: 10px 20px; gap: 16px; }
   .selfmade-cta { flex-direction: column; text-align: center; padding: 40px 24px; }
   .selfmade-cta-logo { order: -1; }
@@ -1074,11 +1076,11 @@ body {
   .will-intro { padding: 40px 20px; }
   .social-links { gap: 8px; }
   .beehiiv-wrap {
-    padding: 0 !important;
+    padding: 0 8px !important;
     max-width: 100% !important;
-    width: calc(100vw - 32px) !important;
-    height: 280px !important;
-    margin: 0 auto 40px !important;
+    width: calc(100vw - 16px) !important;
+    height: 260px !important;
+    margin: 0 auto 32px !important;
     position: relative;
     overflow: hidden;
   }
@@ -1087,9 +1089,9 @@ body {
     top: 0;
     left: 50%;
     width: 480px !important;
-    height: 400px !important;
+    height: 380px !important;
     max-width: none !important;
-    transform: translateX(-50%) scale(0.72);
+    transform: translateX(-50%) scale(0.68);
     transform-origin: top center;
   }
   .inline-newsletter { flex-direction: column; text-align: center; }
