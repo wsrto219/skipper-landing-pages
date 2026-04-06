@@ -1209,8 +1209,27 @@ body {
 
   <!-- Newsletter embed -->
   <div class="beehiiv-wrap">
-    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no"></iframe>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" onload="this.style.height = this.contentWindow.document.body.scrollHeight + 'px'"></iframe>
   </div>
+  <script>
+  // Listen for beehiiv iframe resize messages (success state)
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'beehiiv' && e.data.height) {
+      var iframe = document.querySelector('.beehiiv-embed');
+      if (iframe) iframe.style.height = e.data.height + 'px';
+    }
+    // Also handle generic resize messages from beehiiv
+    if (typeof e.data === 'string' && e.data.indexOf('beehiiv') > -1) {
+      try {
+        var data = JSON.parse(e.data);
+        if (data.height) {
+          var iframe = document.querySelector('.beehiiv-embed');
+          if (iframe) iframe.style.height = data.height + 'px';
+        }
+      } catch(err) {}
+    }
+  });
+  </script>
 
   <div class="hero-badge">MOTION CREATIVE STRATEGY BOOTCAMP</div>
   <h1>The complete AI ad creative <span class="accent">production system.</span></h1>
@@ -2280,5 +2299,6 @@ function submitSkipperForm(form) {
 }
 </script>
 <script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
+<script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
 </body>
 </html>
