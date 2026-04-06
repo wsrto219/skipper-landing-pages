@@ -1083,6 +1083,58 @@ body {
   .social-links { gap: 8px; }
   .inline-newsletter { flex-direction: column; text-align: center; }
 }
+
+/* Accordion prompts */
+.prompt-accordion { margin: 24px 0; }
+.prompt-accordion summary {
+  cursor: pointer;
+  background: #1B2A4A;
+  color: #4A7BF7;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background 0.2s;
+}
+.prompt-accordion summary::-webkit-details-marker { display: none; }
+.prompt-accordion summary::before {
+  content: '\25B6';
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+.prompt-accordion[open] summary::before { transform: rotate(90deg); }
+.prompt-accordion[open] summary { border-radius: 12px 12px 0 0; }
+.prompt-accordion .code-block { margin: 0; border-radius: 0 0 12px 12px; }
+
+/* Standalone consulting CTA button */
+.consulting-cta-standalone {
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 900px;
+  padding: 0 40px;
+}
+.consulting-cta-standalone .consulting-btn-standalone {
+  display: inline-block;
+  background: linear-gradient(135deg, #4A7BF7 0%, #7B61FF 100%);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.1s, box-shadow 0.2s;
+  box-shadow: 0 4px 14px rgba(74, 123, 247, 0.3);
+}
+.consulting-cta-standalone .consulting-btn-standalone:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(74, 123, 247, 0.4);
+}
 </style>
 </head>
 <body>
@@ -1094,33 +1146,17 @@ body {
     <a href="#how-it-works">How It Works</a>
     <a href="#downloads">Downloads</a>
     <a href="#skipper">Skipper</a>
-    <a href="https://www.selfgen.co/sub-home" class="nav-cta">Subscribe to SelfStack</a>
+    <a href="#skipper" class="nav-cta">Request Skipper Beta Access</a>
   </div>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-badge">MOTION CREATIVE STRATEGY BOOTCAMP</div>
-  <h1>The complete AI ad creative <span class="accent">production system.</span></h1>
-  <p>Research prompts, format templates, scoring agents, and image generation workflows. Everything you need to produce static ad creative with AI. Copy-paste ready.</p>
+  <img src="will-face.jpeg" alt="Will Sartorius" class="will-photo" style="margin-bottom: 16px;">
+  <h2 style="font-size: 28px; font-weight: 800; color: #1B2A4A; margin-bottom: 4px; letter-spacing: -0.5px;">Will Sartorius</h2>
+  <p class="subtitle" style="color: #3A5280; font-size: 15px; margin-bottom: 20px;">CEO of SelfMade | Building Skipper (getskipper.ai)</p>
 
-  <div class="newsletter-cta">
-    <h3>Get the weekly SelfStack workflow</h3>
-    <p>Every Friday: new prompts, format templates, and production techniques for AI ad creative. Join 5,000+ creative strategists.</p>
-    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 480px;"></iframe>
-  </div>
-</section>
-
-<!-- Will Sartorius intro -->
-<section class="will-intro">
-  <img src="will-face.jpeg" alt="Will Sartorius" class="will-photo">
-  <h2>Will Sartorius</h2>
-  <p class="subtitle">CEO of SelfMade | Building Skipper (getskipper.ai)</p>
-  <div class="social-links">
-    <a href="https://www.selfgen.co/sub-home" class="social-link newsletter-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-      SelfStack Newsletter
-    </a>
+  <div class="social-links" style="margin-bottom: 16px;">
     <a href="https://www.linkedin.com/in/willsartorius/" class="social-link linkedin" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
       Follow on LinkedIn
@@ -1133,6 +1169,26 @@ body {
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
       Book a Consulting Call
     </a>
+  </div>
+
+  <!-- SelfMade Banner -->
+  <div class="selfmade-banner" style="max-width: 700px; margin: 0 auto 28px;">
+    <div class="selfmade-banner-left">
+      <img src="selfmade-logo.svg" alt="SelfMade">
+      <p><strong>Don't want to build it yourself?</strong> SelfMade sets up the entire system for your brand and runs it.</p>
+    </div>
+    <a href="https://www.selfmade.co/book-a-call" class="book-call-btn">Book a Call</a>
+  </div>
+
+  <div class="hero-badge">MOTION CREATIVE STRATEGY BOOTCAMP</div>
+  <h1>The complete AI ad creative <span class="accent">production system.</span></h1>
+  <p>Research prompts, format templates, scoring agents, and image generation workflows. Everything you need to produce static ad creative with AI. Copy-paste ready.</p>
+
+  <div class="newsletter-cta">
+    <h3>Get the weekly SelfStack workflow</h3>
+    <p>Every Friday: new prompts, format templates, and production techniques for AI ad creative. Join 5,000+ creative strategists.</p>
+    <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 480px; height: 314px; margin: 0; border-radius: 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
   </div>
 </section>
 
@@ -1202,20 +1258,13 @@ body {
     <p><strong>Claude Chat users:</strong> upload files to Project Knowledge. <strong>Claude Code users:</strong> save .md files to your project folder. Either way, one workspace, all your assets, every session starts smart.</p>
   </div>
 
-  <div class="selfmade-banner">
-    <div class="selfmade-banner-left">
-      <img src="selfmade-logo.svg" alt="SelfMade">
-      <p><strong>Don't want to build it yourself?</strong> SelfMade sets up the entire system for your brand and runs it.</p>
-    </div>
-    <a href="https://www.selfmade.co/book-a-call" class="book-call-btn">Book a Call</a>
-  </div>
 </section>
 
 <!-- Inline newsletter reminder -->
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>New prompts and templates every Friday in SelfStack</p>
-    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 400px;"></iframe>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 480px; height: 314px; margin: 0; border-radius: 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
   </div>
 </div>
 
@@ -1279,8 +1328,9 @@ body {
   <h2>The Research Prompt</h2>
   <p>Run this once per brand. Paste into a Claude Project with web search enabled. Save the output as your brand research brief.</p>
 
+  <details class="prompt-accordion">
+    <summary>Copy and paste into Claude</summary>
   <div class="code-block">
-    <span class="code-label">Copy and paste into Claude</span>
     <pre>INPUT VARIABLES:
 
 Target Brand Name: [INSERT BRAND NAME HERE]
@@ -1471,6 +1521,7 @@ Based on everything above, generate ready-to-use hooks for each ad type:
   }
 }</pre>
   </div>
+  </details>
 
   <div class="save-reminder">
     <div class="icon">&#128190;</div>
@@ -1504,8 +1555,9 @@ Based on everything above, generate ready-to-use hooks for each ad type:
     </div>
   </div>
 
+  <details class="prompt-accordion">
+    <summary>Brand Spec Card Prompt</summary>
   <div class="code-block">
-    <span class="code-label">Brand Spec Card Prompt</span>
     <pre>Using the Brand Research Brief you just created, generate a clean HTML
 page I can screenshot as a Brand Spec Card for AI image generation.
 
@@ -1526,9 +1578,11 @@ Make it clean, well-organized, and visually clear. This card will be
 uploaded as a reference image to an AI image generator, so every detail
 needs to be visually explicit, not just described in text.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Visual Style Card Prompt</summary>
   <div class="code-block">
-    <span class="code-label">Visual Style Card Prompt</span>
     <pre>Using the Brand Research Brief, generate a second HTML page I can
 screenshot as a Visual Style Card. This card should include:
 
@@ -1548,6 +1602,7 @@ screenshot as a Visual Style Card. This card should include:
 Same as before: clean, visual, designed to be uploaded as a reference
 image to an AI image generator.</pre>
   </div>
+  </details>
 
   <div class="save-reminder">
     <div class="icon">&#128190;</div>
@@ -1603,7 +1658,7 @@ image to an AI image generator.</pre>
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>Want more format templates? They drop weekly in SelfStack</p>
-    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 400px;"></iframe>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 480px; height: 314px; margin: 0; border-radius: 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
   </div>
 </div>
 
@@ -1662,8 +1717,9 @@ image to an AI image generator.</pre>
     </tbody>
   </table>
 
+  <details class="prompt-accordion">
+    <summary>Build your own agent — full DIY prompt</summary>
   <div class="code-block">
-    <span class="code-label">Build your own agent — full DIY prompt</span>
     <pre>I need a copywriting assistant that reviews my ad copy for [YOUR FOCUS].
 
 This assistant should:
@@ -1680,6 +1736,7 @@ Write this as a comprehensive .md file I can save and reuse. Include examples of
 
 </pre>
   </div>
+  </details>
 
   <div class="save-reminder">
     <div class="icon">&#128190;</div>
@@ -1727,8 +1784,9 @@ Write this as a comprehensive .md file I can save and reuse. Include examples of
     </div>
   </div>
 
-  <div class="code-block" style="margin-top: 32px;">
-    <span class="code-label">Step 1: Upload the ad to clone to Claude and paste this prompt</span>
+  <details class="prompt-accordion" style="margin-top: 32px;">
+    <summary>Step 1: Upload the ad to clone to Claude and paste this prompt</summary>
+  <div class="code-block">
     <pre>I'm uploading a competitor's ad. Deconstruct it completely.
 Break down every single element you see:
 1. AD FORMAT: What type of ad is this? (feature callout, headline, before/after, testimonial, etc.)
@@ -1743,9 +1801,11 @@ Break down every single element you see:
 
 Be thorough. I want someone who has never seen this ad to understand exactly what it looks like from your description alone.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Step 2: Make it yours — paste this after the deconstruction</summary>
   <div class="code-block">
-    <span class="code-label">Step 2: Make it yours — paste this after the deconstruction</span>
     <pre>Now rewrite this ad for my brand.
 
 Brand: [YOUR BRAND]
@@ -1768,6 +1828,7 @@ The prompt must include:
 
 The prompt should be ready to copy-paste directly into Nano Banana with no edits needed.</pre>
   </div>
+  </details>
 
   <!-- Stage 1: Deconstruct -->
   <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1B2A4A;">Stage 1: Deconstruct the Competitor Ad</h3>
@@ -1791,8 +1852,9 @@ The prompt should be ready to copy-paste directly into Nano Banana with no edits
     </div>
   </div>
 
-  <div class="code-block" style="margin-top: 24px;">
-    <span class="code-label">Layout Analysis JSON (extracted by Claude)</span>
+  <details class="prompt-accordion" style="margin-top: 24px;">
+    <summary>Layout Analysis JSON (extracted by Claude)</summary>
+  <div class="code-block">
     <pre>{
   "aspect_ratio": "",
   "format_type": "headline | before-after | testimonial | social-proof | ...",
@@ -1806,9 +1868,11 @@ The prompt should be ready to copy-paste directly into Nano Banana with no edits
   }
 }</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Copy Extraction JSON (extracted by Claude)</summary>
   <div class="code-block">
-    <span class="code-label">Copy Extraction JSON (extracted by Claude)</span>
     <pre>{
   "text_elements": [
     {
@@ -1823,13 +1887,15 @@ The prompt should be ready to copy-paste directly into Nano Banana with no edits
   "proof_mechanism": "How does it prove its claim?"
 }</pre>
   </div>
+  </details>
 
   <!-- Stage 2: Rebuild -->
   <h3 style="font-size: 24px; font-weight: 800; margin: 48px 0 12px; color: #1B2A4A;">Stage 2: Rebuild for Your Brand</h3>
   <p style="font-size: 15px; color: #3A5280; margin-bottom: 24px; line-height: 1.7;">Using the deconstruction, Claude generates a complete ad prompt that keeps the structural techniques that work, replaces all copy with YOUR brand's voice, applies YOUR visual system from the spec sheet, and maintains YOUR format spec text limits.</p>
 
+  <details class="prompt-accordion">
+    <summary>Rebuild Template Prompt (generated by Claude)</summary>
   <div class="code-block">
-    <span class="code-label">Rebuild Template Prompt (generated by Claude)</span>
     <pre>You are generating a social media ad creative. The output must be a
 finished, publication-ready image at [ASPECT RATIO] with all copy
 rendered directly in the image using the brand's fonts from the
@@ -1865,6 +1931,7 @@ RULES:
 4. One continuous image. No panels, borders, or grid lines.
 5. This must look like YOUR brand's ad, not a copy of the competitor's.</pre>
   </div>
+  </details>
 
   <div class="callout" style="margin-top: 24px;">
     <div class="callout-icon">&#9888;&#65039;</div>
@@ -1915,13 +1982,16 @@ RULES:
     </div>
   </div>
 
-  <div class="code-block" style="margin-top: 32px;">
-    <span class="code-label">Step 1 Prompt: Come up with ideas (paste into Claude with your static ad uploaded)</span>
+  <details class="prompt-accordion" style="margin-top: 32px;">
+    <summary>Step 1 Prompt: Come up with ideas (paste into Claude with your static ad uploaded)</summary>
+  <div class="code-block">
     <pre>I want to animate this static ad. Give me 5 animation concepts. For each one tell me: (1) Is my static the START or END frame? (2) What does the other frame look like — describe it in detail? (3) What motion happens between the two frames? (4) Why does this motion make sense for the product? Rules: all text must stay frozen in place throughout the animation, no camera movement, 3-4 seconds max</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Step 2 Prompt: Generate the missing frame with Nano Banana 2</summary>
   <div class="code-block">
-    <span class="code-label">Step 2 Prompt: Generate the missing frame with Nano Banana 2</span>
     <pre>I want to animate this static ad. The concept is: [describe your chosen concept from step 1, e.g. "gummy bears march into frame and lift the product up into position. My static is the END frame."]
 
 My static is the [END] frame.
@@ -1934,9 +2004,11 @@ The prompt must specify exact dimensions (1080x1920). I will upload my original 
 
 Be extremely detailed — NB2 won't guess, it only does what you tell it.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Step 4 Prompt: Get the Veo 3.1 video prompt (upload both frames to Claude)</summary>
   <div class="code-block">
-    <span class="code-label">Step 4 Prompt: Get the Veo 3.1 video prompt (upload both frames to Claude)</span>
     <pre>I'm uploading two frames for a video animation.
 
 IMAGE 1 is the START frame.
@@ -1957,9 +2029,11 @@ The prompt MUST include:
 
 Format as a ready-to-paste JSON prompt for Veo 3.1.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Step 6 Prompt: Iterate on your animation (upload GIF + both original frames)</summary>
   <div class="code-block">
-    <span class="code-label">Step 6 Prompt: Iterate on your animation (upload GIF + both original frames)</span>
     <pre>I'm uploading the animation output plus my original start frame and end frame for reference.
 
 Here's what's wrong with the animation:
@@ -1967,6 +2041,7 @@ Here's what's wrong with the animation:
 
 Give me a corrected Veo 3.1 JSON prompt that fixes these issues. Keep everything that worked well.</pre>
   </div>
+  </details>
 
   <div class="callout">
     <div class="callout-icon">&#128161;</div>
@@ -1984,8 +2059,9 @@ Give me a corrected Veo 3.1 JSON prompt that fixes these issues. Keep everything
   <h2>Brief, Score, Generate, Multiply</h2>
   <p>Once your system is set up (brand extraction, reference cards, format templates, agents), these are the prompts you run every time you create an ad.</p>
 
+  <details class="prompt-accordion">
+    <summary>Starter prompt for briefing</summary>
   <div class="code-block">
-    <span class="code-label">Starter prompt for briefing</span>
     <pre>I want to create a [HEADLINE] ad for [PRODUCT NAME].
 
 Persona: [e.g. Sensitive Skin Sufferer]
@@ -1994,16 +2070,20 @@ Emotion: [e.g. Relief]
 
 Use my brand bible and format template to write the full brief: headline, subhead, copy, creative direction, everything. Follow the format template exactly.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Starter prompt for agent review</summary>
   <div class="code-block">
-    <span class="code-label">Starter prompt for agent review</span>
     <pre>Please have the agents review the copy.
 
 Please iterate on the copy until every agent gives it a 90+ / 100.</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Convert approved copy to a Nano Banana 2 prompt</summary>
   <div class="code-block">
-    <span class="code-label">Convert approved copy to a Nano Banana 2 prompt</span>
     <pre>Convert this into a ready-to-paste Nano Banana 2 image generation prompt.
 
 The prompt must include:
@@ -2020,9 +2100,11 @@ The prompt must include:
 - A note that I will upload the brand spec card, visual style
   card, and product photo as reference images</pre>
   </div>
+  </details>
 
+  <details class="prompt-accordion">
+    <summary>Multiply one winning ad across all your format templates</summary>
   <div class="code-block">
-    <span class="code-label">Multiply one winning ad across all your format templates</span>
     <pre>I have a winning ad brief that I want to multiply across different format templates. The original brief is below.
 
 Here are my format templates: [upload or list your .md template files]
@@ -2041,6 +2123,7 @@ Do not change the strategic foundation. Only change the packaging.
 The original brief:
 [paste your winning brief here]</pre>
   </div>
+  </details>
 </section>
 
 <div class="divider"></div>
@@ -2147,7 +2230,7 @@ The original brief:
   <h2>Stop guessing. Start producing.</h2>
   <p>Subscribe to SelfStack. Get prompts, templates, and workflows every Friday.</p>
   <div style="margin-bottom: 24px;">
-    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 480px;"></iframe>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; max-width: 480px; height: 314px; margin: 0; border-radius: 0px !important; background-color: transparent; box-shadow: 0 0 #0000;"></iframe>
   </div>
   <div class="btn-group">
     <a href="https://getskipper.ai" class="btn-secondary">Join the Skipper Beta</a>
@@ -2190,5 +2273,6 @@ function submitSkipperForm(form) {
   return false;
 }
 </script>
+<script type="text/javascript" async src="https://subscribe-forms.beehiiv.com/attribution.js"></script>
 </body>
 </html>
