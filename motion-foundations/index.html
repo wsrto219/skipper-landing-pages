@@ -208,10 +208,14 @@ body {
   background: #4A7BF7;
   color: #fff;
 }
-.social-link.selfmade-link {
-  background: #fff;
-  color: #1B2A4A;
-  border: 2px solid #1B2A4A;
+.social-link.consulting-link {
+  background: linear-gradient(135deg, #4A7BF7 0%, #7B61FF 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 14px rgba(74, 123, 247, 0.3);
+}
+.social-link.consulting-link:hover {
+  box-shadow: 0 6px 20px rgba(74, 123, 247, 0.4);
 }
 
 /* Section */
@@ -1103,14 +1107,7 @@ body {
   <div class="newsletter-cta">
     <h3>Get the weekly SelfStack workflow</h3>
     <p>Every Friday: new prompts, format templates, and production techniques for AI ad creative. Join 5,000+ creative strategists.</p>
-    <form class="email-form dark" action="https://www.selfgen.co/create" method="post" target="_blank">
-      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
-      <input type="hidden" name="double_opt" value="false">
-      <input type="hidden" name="fallback_path" value="/sub-home">
-      <input type="hidden" name="sent_from_orchid" value="true">
-      <input type="email" name="email" placeholder="Enter your email..." required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 480px;"></iframe>
   </div>
 </section>
 
@@ -1132,7 +1129,7 @@ body {
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       Follow on X
     </a>
-    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="social-link selfmade-link" target="_blank" rel="noopener">
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="social-link consulting-link" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>
       Book a Consulting Call
     </a>
@@ -1218,14 +1215,7 @@ body {
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>New prompts and templates every Friday in SelfStack</p>
-    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" target="_blank">
-      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
-      <input type="hidden" name="double_opt" value="false">
-      <input type="hidden" name="fallback_path" value="/sub-home">
-      <input type="hidden" name="sent_from_orchid" value="true">
-      <input type="email" name="email" placeholder="Enter your email..." required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 400px;"></iframe>
   </div>
 </div>
 
@@ -1613,14 +1603,7 @@ image to an AI image generator.</pre>
 <div style="max-width: 1100px; margin: 0 auto; padding: 0 40px;">
   <div class="inline-newsletter">
     <p>Want more format templates? They drop weekly in SelfStack</p>
-    <form class="email-form" style="max-width: 340px; margin: 0;" action="https://www.selfgen.co/create" method="post" target="_blank">
-      <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
-      <input type="hidden" name="double_opt" value="false">
-      <input type="hidden" name="fallback_path" value="/sub-home">
-      <input type="hidden" name="sent_from_orchid" value="true">
-      <input type="email" name="email" placeholder="Enter your email..." required>
-      <button type="submit">Subscribe</button>
-    </form>
+    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 400px;"></iframe>
   </div>
 </div>
 
@@ -2139,9 +2122,9 @@ The original brief:
 <section class="section" style="padding-top: 0; padding-bottom: 40px;">
   <div class="consulting-cta">
     <img src="will-face.jpeg" alt="Will Sartorius" class="consul-photo">
-    <h2>Book a private consulting call</h2>
-    <p>Want 1-on-1 help setting up your AI creative system? I'll walk you through the entire process, audit your current setup, and build a custom plan for your brand.</p>
-    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="consulting-btn" target="_blank" rel="noopener">Book a Consulting Call with Will</a>
+    <h2>Want me to teach your team?</h2>
+    <p>Book a private session. I'll walk your team through the entire AI creative system, audit your current setup, and build a custom plan for your brand.</p>
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="consulting-btn" target="_blank" rel="noopener">Book a Consulting Call</a>
   </div>
 </section>
 
@@ -2163,18 +2146,13 @@ The original brief:
 <div class="footer-cta">
   <h2>Stop guessing. Start producing.</h2>
   <p>Subscribe to SelfStack. Get prompts, templates, and workflows every Friday.</p>
-  <form class="email-form dark" style="margin-bottom: 24px;" action="https://www.selfgen.co/create" method="post" target="_blank">
-    <input type="hidden" name="signup_flow_id" value="2ec8ceb1-8ad1-4f03-8ebb-a0ce8c439057">
-    <input type="hidden" name="double_opt" value="false">
-    <input type="hidden" name="fallback_path" value="/sub-home">
-    <input type="hidden" name="sent_from_orchid" value="true">
-    <input type="email" name="email" placeholder="Enter your email..." required>
-    <button type="submit">Subscribe</button>
-  </form>
+  <div style="margin-bottom: 24px;">
+    <iframe src="https://embeds.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent; width: 100%; max-width: 480px;"></iframe>
+  </div>
   <div class="btn-group">
     <a href="https://getskipper.ai" class="btn-secondary">Join the Skipper Beta</a>
-    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="btn-secondary">Consulting Call with Will</a>
-    <a href="https://www.selfmade.co/book-a-call" class="btn-secondary">SelfMade Agency Call</a>
+    <a href="https://calendly.com/selfmade-discovery/will-sartorius-ai-creative-consulting-call" class="btn-secondary">Consulting Call</a>
+    <a href="https://www.selfmade.co/book-a-call" class="btn-secondary">SelfMade Agency</a>
   </div>
 </div>
 
