@@ -1068,6 +1068,25 @@ body {
   .skipper-promo .features { flex-direction: column; align-items: center; gap: 12px; }
   .will-intro { padding: 40px 20px; }
   .social-links { gap: 8px; }
+  .beehiiv-wrap {
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: calc(100vw - 32px) !important;
+    height: 280px !important;
+    margin: 0 auto 40px !important;
+    position: relative;
+    overflow: hidden;
+  }
+  .beehiiv-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 480px !important;
+    height: 400px !important;
+    max-width: none !important;
+    transform: translateX(-50%) scale(0.72);
+    transform-origin: top center;
+  }
   .inline-newsletter { flex-direction: column; text-align: center; }
 }
 
@@ -1161,9 +1180,9 @@ body {
   </div>
 
   <!-- Newsletter embed -->
-  <div style="width: 100%; max-width: 680px; margin: 0 auto 40px; padding: 0 20px;">
+  <div class="beehiiv-wrap" style="width: 100%; max-width: 560px; margin: 0 auto 40px; padding: 0 16px; overflow: hidden; box-sizing: border-box;">
     <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 420px; border-radius: 12px !important; background-color: transparent;"></iframe>
+    <iframe src="https://subscribe-forms.beehiiv.com/d8488f98-4883-42b3-b5bd-7eda776fe592" class="beehiiv-embed" data-test-id="beehiiv-embed" frameborder="0" scrolling="no" style="width: 100%; height: 300px; border-radius: 12px !important; background-color: transparent; display: block;"></iframe>
   </div>
 
   <div class="hero-badge">MOTION CREATIVE STRATEGY BOOTCAMP</div>
