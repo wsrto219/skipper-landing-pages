@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,8 @@
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html, body {
-  overflow-x: hidden;
-  max-width: 100vw;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,6 +19,8 @@ body {
   background: #E5F0F6;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Nav */
@@ -1076,22 +1077,21 @@ body {
   .will-intro { padding: 40px 20px; }
   .social-links { gap: 8px; }
   .beehiiv-wrap {
-    padding: 0 8px !important;
+    padding: 0 !important;
     max-width: 100% !important;
-    width: calc(100vw - 16px) !important;
-    height: 260px !important;
+    width: calc(100vw - 40px) !important;
+    height: 240px !important;
     margin: 0 auto 32px !important;
     position: relative;
-    overflow: hidden;
   }
   .beehiiv-wrap iframe {
     position: absolute;
     top: 0;
     left: 50%;
-    width: 480px !important;
+    width: 500px !important;
     height: 380px !important;
     max-width: none !important;
-    transform: translateX(-50%) scale(0.68);
+    transform: translateX(-50%) scale(0.65);
     transform-origin: top center;
   }
   .inline-newsletter { flex-direction: column; text-align: center; }
